@@ -244,3 +244,37 @@ export function getProductStory(
   const collection = getCollection(categorySlug);
   return collection?.stories.find((s) => s.slug === productSlug);
 }
+
+// ════════════════════════════════════════════════════════
+// MASTER CATALOGUES (Google Drive Links)
+// ════════════════════════════════════════════════════════
+export interface Catalogue {
+  id: string;
+  title: string;
+  category: string;
+  driveUrl: string;
+}
+
+export const masterCatalogues: Catalogue[] = [
+  {
+    id: "lev-furniture-2",
+    title: "Lev Furniture 2",
+    category: "Furniture",
+    // Replace this string with your actual Google Drive share link!
+    driveUrl: "#", 
+  },
+  {
+    id: "kitchen-systems-v1",
+    title: "Kitchen Systems Vol. 1",
+    category: "Kitchens",
+    // Replace this string with your actual Google Drive share link!
+    driveUrl: "#", 
+  },
+  {
+    id: "architectural-lighting",
+    title: "Architectural Lighting",
+    category: "Lighting",
+    // Replace this string with your actual Google Drive share link!
+    driveUrl: "#", 
+  }
+];

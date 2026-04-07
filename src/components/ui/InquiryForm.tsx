@@ -25,8 +25,28 @@ export default function InquiryForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock submission — replace with API call later
-    console.log("Form submitted:", formData);
+    
+    // Without a backend database, the most secure architectural approach is to push the sanitized payload directly into the user's native mail client.
+    const recipient = "hello@casabliss.in";
+    const subject = encodeURIComponent(`New Sourcing Project Inquiry: ${formData.projectType || "General"} in ${formData.location || "Unspecified"}`);
+    
+    // Construct the body payload with strict whitespace and clear delineation
+    const bodyText = `
+Name: ${formData.name}
+Project Type: ${formData.projectType}
+Location: ${formData.location}
+Budget: ${formData.budget}
+
+Project Details:
+${formData.message}
+    `.trim();
+
+    const body = encodeURIComponent(bodyText);
+    
+    // Safely execute native link navigation
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    
+    // Provide visual confirmation in the UI
     setSubmitted(true);
   };
 
