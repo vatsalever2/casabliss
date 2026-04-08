@@ -186,7 +186,7 @@ export default function HomePage() {
                style={{ y: y2 }}
              >
                 <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply z-10 pointer-events-none" />
-                <PremiumImage src="/images/vignette-2.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
+                <PremiumImage src="/images/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
              </motion.div>
           </div>
           
@@ -215,10 +215,10 @@ export default function HomePage() {
                     href={masterCatalogueUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 border border-gold/30 text-gold/80 px-6 py-3 text-xs uppercase tracking-[0.2em] font-sans hover:bg-gold/10 hover:border-gold/60 transition-all duration-500"
+                    className="group inline-flex items-center gap-3 border border-gold/30 text-gold/80 px-6 py-3 text-xs uppercase tracking-[0.2em] font-sans hover:bg-gold/10 hover:border-gold/60 transition-all duration-500"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    <span>Download All Catalogues</span>
+                    <span>View All Catalogues</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </a>
                 </Magnetic>
               </div>
@@ -267,10 +267,10 @@ export default function HomePage() {
                         href={collection.catalogueUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-cream/40 text-xs uppercase tracking-[0.2em] font-sans mt-4 hover:text-gold/70 transition-colors duration-400"
+                        className="group inline-flex items-center gap-2 text-cream/40 text-xs uppercase tracking-[0.2em] font-sans mt-4 hover:text-gold/70 transition-colors duration-400"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         <span>View Catalogue</span>
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                       </a>
                     </SectionReveal>
                   </div>

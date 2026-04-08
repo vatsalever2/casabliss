@@ -46,7 +46,7 @@ export default function FeaturedSpaces() {
               <CurtainReveal>
                 <div className="w-full h-full relative overflow-hidden">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                    <PremiumImage src="/images/hero-home.jpg" alt="Luxury Living Room" fill className="object-cover" />
+                    <PremiumImage src="/images/gallery-1.jpg" alt="Architectural Storage" fill className="object-cover" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                   </motion.div>
                 </div>
@@ -59,7 +59,7 @@ export default function FeaturedSpaces() {
               <CurtainReveal>
                 <div className="w-full h-full relative overflow-hidden">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                    <PremiumImage src="/images/collection-kitchen.jpg" alt="Minimalist Kitchen" fill className="object-cover" />
+                    <PremiumImage src="/images/gallery-2.jpg" alt="Curated Bedroom Piece" fill className="object-cover" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                   </motion.div>
                 </div>
@@ -70,7 +70,7 @@ export default function FeaturedSpaces() {
               <CurtainReveal>
                 <div className="w-full h-full relative overflow-hidden">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                    <PremiumImage src="/images/collection-furniture.jpg" alt="Architectural Details" fill className="object-cover grayscale-[20%]" />
+                    <PremiumImage src="/images/gallery-3.jpg" alt="Dining Environment" fill className="object-cover grayscale-[20%]" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                   </motion.div>
                 </div>

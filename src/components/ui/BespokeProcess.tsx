@@ -12,19 +12,19 @@ const steps = [
     id: "01",
     title: "Consultation & Vision",
     description: "Our in-house architects work closely with you or your design team to understand the spatial requirements, material preferences, and the exact atmosphere you wish to cultivate.",
-    image: "/images/vignette-1.jpg"
+    image: "/images/service-1.jpg"
   },
   {
     id: "02",
     title: "Factory-Direct Curation",
     description: "We bypass local distributors entirely. Our team works directly with China's finest furniture factories, hand-selecting pieces that meet our exacting standards for material, proportion, and finish.",
-    image: "/images/collection-furniture.jpg"
+    image: "/images/service-2.jpg"
   },
   {
     id: "03",
     title: "White-Glove Acquisition",
     description: "From international logistics to final placement in your home. We handle the entire acquisition lifecycle, ensuring zero compromise on the condition and installation of your pieces.",
-    image: "/images/vignette-2.jpg"
+    image: "/images/service-3.jpg"
   }
 ];
 
