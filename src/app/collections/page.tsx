@@ -7,7 +7,7 @@ import CatalogueCard from "@/components/ui/CatalogueCard";
 export const metadata: Metadata = {
   title: "Collections",
   description:
-    "Explore Casa Bliss collections — premium furniture, kitchen systems, designer faucets, and architectural lighting sourced from China's finest factories.",
+    "Explore Casa Bliss collections — premium Living Room, Bedroom, Dining, and Storage & Decor solutions sourced direct from China's finest factories.",
 };
 
 export default function CollectionsPage() {

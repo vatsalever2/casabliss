@@ -8,6 +8,7 @@ import SmoothScrolling from "@/components/ui/SmoothScrolling";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://casabliss.in"),
   title: {
     default: "Casa Bliss — Luxury Furniture Sourced from China",
     template: "%s | Casa Bliss",

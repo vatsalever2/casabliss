@@ -15,7 +15,7 @@ export async function getLocalImageBlur(imagePath: string): Promise<string | und
     const { base64 } = await getPlaiceholder(file, { size: 10 });
 
     return base64;
-  } catch (err) {
+  } catch {
     console.warn(`[Plaiceholder] Could not generate blur for ${imagePath}.`);
     return undefined;
   }

@@ -9,7 +9,10 @@ import SectionReveal from "@/components/ui/SectionReveal";
 import CollectionTile from "@/components/ui/CollectionTile";
 import Magnetic from "@/components/ui/Magnetic";
 import CurtainReveal from "@/components/ui/CurtainReveal";
-import { collections } from "@/lib/collections-data";
+import GlobalPedigree from "@/components/ui/GlobalPedigree";
+import FeaturedSpaces from "@/components/ui/FeaturedSpaces";
+import BespokeProcess from "@/components/ui/BespokeProcess";
+import { collections, masterCatalogueUrl } from "@/lib/collections-data";
 
 export default function HomePage() {
   const containerRef = useRef<HTMLElement>(null);
@@ -191,6 +194,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          THE ORIGINS (Global Pedigree)
+          ═══════════════════════════════════════════════════ */}
+      <GlobalPedigree />
+
+      {/* ═══════════════════════════════════════════════════
           THE COLLECTION — Alternating Staggered Layout
           ═══════════════════════════════════════════════════ */}
       <section className="py-24 md:py-32 px-6 lg:px-12 bg-deep-ink overflow-hidden border-t border-gold/10">
@@ -201,6 +209,19 @@ export default function HomePage() {
               <h2 className="text-display text-4xl md:text-5xl lg:text-7xl text-off-white relative z-10 leading-[1.1]">
                 Four Pillars. <br/> <i className="italic font-light text-gold/80">One Standard.</i>
               </h2>
+              <div className="mt-10">
+                <Magnetic strength={15}>
+                  <a
+                    href={masterCatalogueUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 border border-gold/30 text-gold/80 px-6 py-3 text-xs uppercase tracking-[0.2em] font-sans hover:bg-gold/10 hover:border-gold/60 transition-all duration-500"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download All Catalogues</span>
+                  </a>
+                </Magnetic>
+              </div>
             </div>
           </SectionReveal>
 
@@ -242,6 +263,15 @@ export default function HomePage() {
                            <span>→</span>
                          </Link>
                       </Magnetic>
+                      <a
+                        href={collection.catalogueUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-cream/40 text-xs uppercase tracking-[0.2em] font-sans mt-4 hover:text-gold/70 transition-colors duration-400"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>View Catalogue</span>
+                      </a>
                     </SectionReveal>
                   </div>
 
@@ -253,23 +283,66 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          SINGLE CTA
+          FEATURED SPACES (The Gallery)
           ═══════════════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 px-6 text-center">
-        <SectionReveal>
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-px bg-gold/30 mb-12" />
-            <Magnetic strength={20}>
-              <Link
-                href="/collections"
-                className="gold-link text-heading text-xl md:text-2xl text-off-white px-8 py-4 uppercase tracking-widest text-sm"
-              >
-                Explore the Collection
-              </Link>
-            </Magnetic>
-            <div className="w-12 h-px bg-gold/30 mt-12" />
+      <FeaturedSpaces />
+
+      {/* ═══════════════════════════════════════════════════
+          THE BESPOKE PROCESS
+          ═══════════════════════════════════════════════════ */}
+      <BespokeProcess />
+
+      {/* ═══════════════════════════════════════════════════
+          CLOSING CTA — Immersive Editorial Block
+          ═══════════════════════════════════════════════════ */}
+      <section className="relative py-32 md:py-48 px-6 lg:px-12 flex items-center justify-center overflow-hidden border-t border-gold/10">
+        {/* Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <PremiumImage 
+            src="/images/vignette-2.jpg" 
+            alt="Casa Bliss Luxury Sourcing" 
+            fill 
+            className="object-cover object-center translate-y-[-10%] scale-105" 
+          />
+          <div className="absolute inset-0 bg-deep-ink/90 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-ink via-transparent to-deep-ink" />
+          <div className="absolute inset-0 bg-gradient-to-r from-deep-ink via-transparent to-transparent opacity-80" />
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col md:flex-row items-center md:items-end justify-between gap-12">
+          
+          <div className="max-w-2xl text-center md:text-left">
+            <SectionReveal>
+              <h2 className="text-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-off-white leading-[1.1] mb-6">
+                Your vision. <br />
+                <span className="italic font-light text-gold/80">Our connections.</span>
+              </h2>
+            </SectionReveal>
+            <SectionReveal delay={0.15}>
+              <p className="text-cream/60 text-lg md:text-xl font-light max-w-md mx-auto md:mx-0 leading-relaxed">
+                Skip the showrooms. Bypass the markups. Experience white-glove sourcing direct from the world's most capable factories.
+              </p>
+            </SectionReveal>
           </div>
-        </SectionReveal>
+
+          <div className="md:pb-6 w-full md:w-auto flex justify-center md:justify-end">
+            <SectionReveal delay={0.3}>
+              <Magnetic strength={20}>
+                <Link
+                  href="/inquire"
+                  className="group relative inline-flex items-center justify-center border border-gold/40 bg-gold/5 px-10 py-5 md:px-12 md:py-6 text-sm uppercase tracking-[0.25em] font-sans text-off-white hover:bg-gold hover:text-deep-ink hover:border-gold transition-all duration-500 overflow-hidden w-full md:w-auto"
+                >
+                  <span className="relative z-10 flex items-center gap-4">
+                    <span>Begin Consultation</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </span>
+                </Link>
+              </Magnetic>
+            </SectionReveal>
+          </div>
+          
+        </div>
       </section>
     </>
   );

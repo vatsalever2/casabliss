@@ -119,7 +119,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     <div className="pt-2">
                       <CatalogDownloadTray
                         categoryName={collection.title}
-                        pdfUrl={`/catalogs/${collection.slug}-catalog.pdf`}
+                        pdfUrl={collection.catalogueUrl}
                       />
                     </div>
                   </SectionReveal>

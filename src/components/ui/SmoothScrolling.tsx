@@ -1,8 +1,12 @@
 "use client";
-import { useEffect, ReactNode } from "react";
+import { useEffect, ReactNode, useState } from "react";
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 
 export default function SmoothScrolling({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
+
   useEffect(() => {
     // Luxury Easing Curve for heavy, butter-smooth scroll
     const lenis = new Lenis({
@@ -14,6 +18,8 @@ export default function SmoothScrolling({ children }: { children: ReactNode }) {
       touchMultiplier: 2,
       autoResize: true,
     });
+
+    setLenisInstance(lenis);
 
     function raf(time: number) {
       lenis.raf(time);
@@ -30,6 +36,13 @@ export default function SmoothScrolling({ children }: { children: ReactNode }) {
       lenis.destroy();
     };
   }, []);
+
+  // Reset scroll to top on route change
+  useEffect(() => {
+    if (lenisInstance) {
+      lenisInstance.scrollTo(0, { immediate: true });
+    }
+  }, [pathname, lenisInstance]);
 
   return <>{children}</>;
 }
