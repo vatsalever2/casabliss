@@ -37,7 +37,7 @@ export default function ProcessShell() {
     <div ref={containerRef} className="relative w-full bg-deep-ink flex flex-col min-h-screen">
         
         {/* Physical Absolute Passage Line - Bound to the content height */}
-        <div className="absolute top-[35vh] bottom-[15vh] left-8 md:left-1/2 md:-translate-x-1/2 w-[2px] z-0 pointer-events-none mix-blend-screen">
+        <div className="absolute top-[100vh] bottom-[18vh] left-8 md:left-1/2 md:-translate-x-1/2 w-[2px] z-0 pointer-events-none mix-blend-screen">
           
           {/* Subtle static background line with fade at top/bottom */}
           <div className="absolute inset-0 w-full bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
@@ -66,23 +66,53 @@ export default function ProcessShell() {
         </div>
 
         {/* The Vertical Journey Stack */}
-        <div className="w-full relative z-10 flex flex-col pt-[15vh] pb-[15vh] gap-[10vh] md:gap-[12vh] overflow-hidden">
+        <div className="w-full relative z-10 flex flex-col pt-[15vh] pb-[20vh] gap-[15vh] md:gap-[20vh] overflow-hidden">
           
-          {/* Main Process Heading */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full flex flex-col items-center justify-center text-center px-8 mb-8"
-          >
-            <span className="text-gold font-sans uppercase tracking-[0.4em] text-xs md:text-sm mb-6 block">The Methodology</span>
-            <h1 className="text-display text-5xl md:text-7xl lg:text-8xl text-off-white leading-tight">
-              The <i className="italic font-light text-gold/90">Passage.</i>
-            </h1>
-            <p className="text-sans text-cream/50 max-w-lg mx-auto mt-8 text-sm md:text-base leading-relaxed tracking-wide">
-              A meticulously orchestrated journey from concept to absolute completion. Six chapters. Zero compromises.
-            </p>
-          </motion.div>
+          {/* Cinematic Title Card - 100vh Dedicated Screen */}
+          <div className="w-full h-[85vh] -mt-[15vh] relative flex flex-col items-center justify-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full flex flex-col items-center justify-center text-center px-4"
+            >
+              {/* Delicate Eyebrow */}
+              <div className="flex items-center gap-6 mb-12">
+                 <div className="w-12 md:w-20 h-px bg-gold/30" />
+                 <span className="text-gold font-sans uppercase tracking-[0.5em] text-[9px] md:text-xs ml-[0.5em]">Methodology</span>
+                 <div className="w-12 md:w-20 h-px bg-gold/30" />
+              </div>
+              
+              {/* Massive Cinematic Heading */}
+              <h1 className="text-display font-light text-6xl md:text-[8rem] lg:text-[10rem] text-off-white tracking-tight leading-none mb-12 drop-shadow-2xl">
+                The Passage.
+              </h1>
+              
+              {/* Elegant Italic Subtext */}
+              <p className="text-serif italic font-light text-cream/50 text-xl md:text-3xl max-w-3xl mx-auto leading-relaxed tracking-wide">
+                Six chapters of meticulous orchestration. <br className="hidden md:block"/>From factory floor, to absolute perfection.
+              </p>
+            </motion.div>
+
+            {/* Premium Scroll Indicator */}
+            <motion.div 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ duration: 1.5, delay: 1.5 }}
+               className="absolute bottom-4 md:bottom-8 flex flex-col items-center gap-3"
+            >
+               <span className="text-[8px] md:text-[9px] font-sans uppercase tracking-[0.5em] text-cream/40 ml-[0.5em]">
+                 Descend
+               </span>
+               <div className="w-[1px] h-12 md:h-16 bg-gold/20 relative overflow-hidden flex justify-center">
+                  <motion.div 
+                     className="absolute w-[2px] h-[8px] bg-gold rounded-full shadow-[0_0_8px_rgba(212,175,55,1)]"
+                     animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  />
+               </div>
+            </motion.div>
+          </div>
 
           <ChapterI_Inquiry />
           <ChapterII_Visa />

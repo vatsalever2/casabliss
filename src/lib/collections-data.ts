@@ -1,18 +1,11 @@
-export interface ProductStory {
-  slug: string;
-  title: string;
-  description: string;
-  materials: string;
-  image: string;
-}
-
 export interface Collection {
   slug: string;
   title: string;
   tagline: string;
   image: string;
   catalogueUrl: string;
-  stories: ProductStory[];
+  philosophy: string;
+  gallery: string[];
 }
 
 // Master catalogue link (all categories combined)
@@ -25,24 +18,13 @@ export const collections: Collection[] = [
     tagline: "Pieces that speak before you enter the room.",
     image: "/images/collection-furniture.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Living Room
-    stories: [
-      {
-        slug: "living-systems",
-        title: "Living Systems",
-        description:
-          "Modular seating designed for spaces that host, not just accommodate. Every angle considered, every joint invisible.",
-        materials: "Italian leather · Solid walnut frame · High-density foam core",
-        image: "/images/collection-furniture.jpg",
-      },
-      {
-        slug: "accent-objects",
-        title: "Accent Objects",
-        description:
-          "The details that complete a room. Console tables, mirrors, and objects chosen for presence.",
-        materials: "Marble · Brass · Hand-finished wood · Artisan glass",
-        image: "/images/collection-furniture.jpg",
-      },
-    ],
+    philosophy: "The living room is the architectural heart of the home. We curate expansive Italian leather seating and monolithic stone that command the space with quiet authority.",
+    gallery: [
+      "/images/collection-furniture.jpg",
+      "/images/gallery-1.jpg",
+      "/images/gallery-2.jpg",
+      "/images/hero-home.jpg"
+    ]
   },
   {
     slug: "bedroom",
@@ -50,24 +32,13 @@ export const collections: Collection[] = [
     tagline: "Where the day ends and quality begins.",
     image: "/images/collection-bedroom-v2.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Bedroom
-    stories: [
-      {
-        slug: "bedroom-retreats",
-        title: "Master Suites",
-        description:
-          "Beds engineered for silence and absolute comfort. Premium tailoring meets robust architectural frames.",
-        materials: "Solid ash frame · Premium upholstery · Integrated lighting",
-        image: "/images/collection-bedroom-v2.jpg",
-      },
-      {
-        slug: "nightstands",
-        title: "Nightstands & Consoles",
-        description:
-          "Essential companions. Storage units that blend seamlessly into the bedroom's calm aesthetic.",
-        materials: "Walnut veneer · Soft-close drawers · Brass detailing",
-        image: "/images/collection-bedroom-v2.jpg",
-      },
-    ],
+    philosophy: "The bedroom demands absolute silence. We architect master suites around European tailoring and textiles that transform the room into a sanctuary of restorative luxury.",
+    gallery: [
+      "/images/collection-bedroom-v2.jpg",
+      "/images/gallery-3.jpg",
+      "/images/gallery-1.jpg",
+      "/images/service-1.jpg"
+    ]
   },
   {
     slug: "dining",
@@ -75,24 +46,13 @@ export const collections: Collection[] = [
     tagline: "Tables that turn a meal into an occasion.",
     image: "/images/collection-dining.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Dining
-    stories: [
-      {
-        slug: "dining-statements",
-        title: "Dining Statements",
-        description:
-          "Expansive tables crafted for proportion and built for decades of gathering.",
-        materials: "Sintered stone top · Sculptural brushed brass legs",
-        image: "/images/collection-dining.jpg",
-      },
-      {
-        slug: "dining-chairs",
-        title: "Dining Chairs",
-        description:
-          "Uncompromised support disguised as elegant design.",
-        materials: "Fabric or premium leather upholstery · Solid wood frame",
-        image: "/images/collection-dining.jpg",
-      },
-    ],
+    philosophy: "Dining is an occasion of communion. We source sculptural slabs of sintered stone that serve as monumental centerpieces built to last for generations.",
+    gallery: [
+      "/images/collection-dining.jpg",
+      "/images/gallery-2.jpg",
+      "/images/gallery-3.jpg",
+      "/images/service-2.jpg"
+    ]
   },
   {
     slug: "storage-decor",
@@ -100,37 +60,18 @@ export const collections: Collection[] = [
     tagline: "Architecture for your objects.",
     image: "/images/collection-storage.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Storage & Decor
-    stories: [
-      {
-        slug: "storage-architecture",
-        title: "Storage Architecture",
-        description:
-          "Wardrobes and shelving systems that disappear into the wall or command the room.",
-        materials: "MDF with lacquer finish · Tempered glass inserts",
-        image: "/images/collection-storage.jpg",
-      },
-      {
-        slug: "mirrors-decor",
-        title: "Mirrors & Accents",
-        description:
-          "Sculptural elements that manipulate light and space. Each object chosen for presence.",
-        materials: "Aged brass · Antiqued mirror · Cast aluminium",
-        image: "/images/collection-storage.jpg",
-      },
-    ],
+    philosophy: "True luxury is the absence of visual noise. Our monolithic systems disappear into your architecture, whilst our decor is curated to shape light and space.",
+    gallery: [
+      "/images/collection-storage.jpg",
+      "/images/gallery-1.jpg",
+      "/images/gallery-2.jpg",
+      "/images/service-3.jpg"
+    ]
   },
 ];
 
 export function getCollection(slug: string): Collection | undefined {
   return collections.find((c) => c.slug === slug);
-}
-
-export function getProductStory(
-  categorySlug: string,
-  productSlug: string
-): ProductStory | undefined {
-  const collection = getCollection(categorySlug);
-  return collection?.stories.find((s) => s.slug === productSlug);
 }
 
 // ════════════════════════════════════════════════════════

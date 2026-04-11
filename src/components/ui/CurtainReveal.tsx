@@ -12,7 +12,7 @@ export default function CurtainReveal({ children }: { children: ReactNode }) {
         whileInView={{ scale: 1 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
-        className="w-full h-full"
+        className="relative w-full h-full"
       >
         {children}
       </motion.div>

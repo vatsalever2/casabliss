@@ -10,20 +10,20 @@ import PremiumImage from "./PremiumImage";
 const steps = [
   {
     id: "01",
-    title: "Consultation & Vision",
-    description: "Our in-house architects work closely with you or your design team to understand the spatial requirements, material preferences, and the exact atmosphere you wish to cultivate.",
+    title: "The Briefing",
+    description: "Establishing spatial constraints and architectural vision. We align intimately with your team before any logistics commence.",
     image: "/images/service-1.jpg"
   },
   {
     id: "02",
-    title: "Factory-Direct Curation",
-    description: "We bypass local distributors entirely. Our team works directly with China's finest furniture factories, hand-selecting pieces that meet our exacting standards for material, proportion, and finish.",
+    title: "The Excursion",
+    description: "Absolute access. We manage all global travel while you curate pieces directly from three factory-direct floors in Foshan.",
     image: "/images/service-2.jpg"
   },
   {
     id: "03",
-    title: "White-Glove Acquisition",
-    description: "From international logistics to final placement in your home. We handle the entire acquisition lifecycle, ensuring zero compromise on the condition and installation of your pieces.",
+    title: "The Handover",
+    description: "Uncompromising execution. Absolute customs clearance transitioning straight into meticulous white-glove assembly within your property.",
     image: "/images/service-3.jpg"
   }
 ];
@@ -39,24 +39,27 @@ export default function BespokeProcess() {
         <div className="w-full lg:w-1/2 flex flex-col relative z-10">
           <div className="sticky top-32">
             <SectionReveal>
-              <span className="text-gold/60 text-xs md:text-sm tracking-[0.2em] uppercase font-sans mb-6 block">
-                The Service
-              </span>
-              <h2 className="text-display text-4xl lg:text-6xl text-off-white leading-tight mb-8">
+              <div className="flex items-center gap-6 mb-8">
+                 <div className="w-8 h-px bg-gold/30" />
+                 <span className="text-gold/60 text-[10px] md:text-xs tracking-[0.4em] uppercase font-sans">
+                   The Methodology
+                 </span>
+              </div>
+              <h2 className="text-display font-light text-5xl lg:text-7xl text-off-white leading-tight mb-8">
                 Bespoke Acquisition. <br/> <i className="italic font-light text-gold/90">Zero Friction.</i>
               </h2>
             </SectionReveal>
 
-            <div className="mt-12 flex flex-col gap-6">
+            <div className="mt-14 flex flex-col gap-6">
               {steps.map((step, idx) => (
                 <div 
                   key={step.id}
                   onClick={() => setActiveStep(idx)}
-                  className={`group cursor-pointer py-6 border-b border-white/5 transition-all duration-500 hover:pl-4 ${activeStep === idx ? 'opacity-100 pl-4' : 'opacity-40 hover:opacity-70'}`}
+                  className={`group cursor-pointer py-6 border-b border-white/5 transition-all duration-500 hover:pl-4 ${activeStep === idx ? 'opacity-100 pl-4 border-white/20' : 'opacity-40 hover:opacity-70'}`}
                 >
-                  <div className="flex items-center gap-6 md:gap-10">
-                    <span className="text-gold/60 font-serif text-xl md:text-2xl">{step.id}</span>
-                    <h3 className="text-2xl md:text-3xl text-off-white group-hover:text-gold transition-colors duration-500">
+                  <div className="flex items-center gap-6 md:gap-8">
+                    <span className="text-gold/80 font-serif italic text-2xl md:text-3xl w-8">{step.id}.</span>
+                    <h3 className="text-display font-light tracking-wide text-2xl md:text-4xl text-off-white group-hover:text-gold transition-colors duration-500">
                       {step.title}
                     </h3>
                   </div>
@@ -69,7 +72,7 @@ export default function BespokeProcess() {
                         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="mt-4 text-cream/60 leading-relaxed pl-12 md:pl-16 pr-8 text-sm md:text-base max-w-md">
+                        <p className="mt-6 text-cream/50 leading-relaxed pl-14 md:pl-16 pr-8 text-[15px] md:text-lg max-w-md font-sans">
                           {step.description}
                         </p>
                       </motion.div>
@@ -79,11 +82,13 @@ export default function BespokeProcess() {
               ))}
             </div>
 
-            <div className="mt-16 pl-12 md:pl-16">
+            <div className="mt-16 pl-14 md:pl-16">
               <Magnetic strength={15}>
-                 <Link href="/inquire" className="gold-link text-eyebrow text-gold/80 inline-flex items-center gap-4 py-2">
-                   <span>Begin Consultation</span>
-                   <span>→</span>
+                 <Link href="/process" className="group relative inline-flex items-center justify-center border border-gold/30 bg-gold/5 px-8 py-4 text-[10px] uppercase tracking-[0.25em] font-sans text-off-white hover:bg-gold hover:text-deep-ink hover:border-gold transition-all duration-500">
+                   <span className="relative z-10 flex items-center gap-4">
+                     <span>Explore The Passage</span>
+                     <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                   </span>
                  </Link>
               </Magnetic>
             </div>

@@ -62,6 +62,7 @@ export default function Navbar() {
                 height={80}
                 className="w-auto h-full object-contain object-left"
                 priority
+                loading="eager"
               />
             </motion.div>
           </Link>

@@ -13,8 +13,7 @@ export default function Footer() {
               alt="Casa Bliss"
               width={160}
               height={80}
-              className="object-contain"
-              style={{ height: "80px", width: "auto" }}
+              className="w-auto h-20 object-contain"
             />
           </Link>
 

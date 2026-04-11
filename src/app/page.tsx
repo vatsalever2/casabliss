@@ -206,10 +206,10 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════
           THE COLLECTION — Alternating Staggered Layout
           ═══════════════════════════════════════════════════ */}
-      <section className="bg-deep-ink border-t border-gold/10 pb-24 md:pb-32">
-        <div className="max-w-[1400px] mx-auto pt-24 md:pt-32 px-6 lg:px-12">
+      <section className="bg-deep-ink border-t border-gold/10">
+        <div className="max-w-[1400px] mx-auto pt-16 md:pt-20 px-6 lg:px-12">
           <SectionReveal>
-            <div className="flex flex-col items-center mb-24 md:mb-40 text-center">
+            <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
               <span className="text-eyebrow text-gold/60 mb-6">The Collection</span>
               <h2 className="text-display text-4xl md:text-5xl lg:text-7xl text-off-white relative z-10 leading-[1.1]">
                 Four Pillars. <br/> <i className="italic font-light text-gold/80">One Standard.</i>
