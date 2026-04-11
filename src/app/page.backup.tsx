@@ -31,13 +31,6 @@ export default function HomePage() {
   const y1 = useTransform(philosophyScrollY, [0, 1], ["-10%", "10%"]);
   const y2 = useTransform(philosophyScrollY, [0, 1], ["15%", "-15%"]);
 
-  // Unified Horizontal Scroll Logic
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: scrollerProgress } = useScroll({
-    target: scrollerRef,
-  });
-  const scrollX = useTransform(scrollerProgress, [0, 1], ["0%", "-75%"]);
-
   const heroImages = [
     "/images/hero-home.jpg",
     "/images/collection-furniture.jpg",
@@ -206,8 +199,8 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════
           THE COLLECTION — Alternating Staggered Layout
           ═══════════════════════════════════════════════════ */}
-      <section className="bg-deep-ink border-t border-gold/10 pb-24 md:pb-32">
-        <div className="max-w-[1400px] mx-auto pt-24 md:pt-32 px-6 lg:px-12">
+      <section className="py-24 md:py-32 px-6 lg:px-12 bg-deep-ink overflow-hidden border-t border-gold/10">
+        <div className="max-w-[1400px] mx-auto">
           <SectionReveal>
             <div className="flex flex-col items-center mb-24 md:mb-40 text-center">
               <span className="text-eyebrow text-gold/60 mb-6">The Collection</span>
@@ -230,59 +223,59 @@ export default function HomePage() {
             </div>
           </SectionReveal>
 
-        </div>
-
-        {/* UNIFIED HORIZONTAL SCROLL LAYOUT */}
-        <div ref={scrollerRef} className="h-[400vh] w-full relative">
-          <div className="sticky top-0 h-[100svh] w-full flex items-center overflow-hidden bg-deep-ink">
-            <motion.div style={{ x: scrollX }} className="flex w-[400vw] h-full items-center">
-              {collections.map((collection, index) => (
-                <div key={collection.slug} className="w-[100vw] h-full flex flex-col md:flex-row items-center justify-center p-6 md:px-24 relative overflow-hidden">
+          <div className="flex flex-col gap-32 md:gap-40">
+            {collections.map((collection, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div key={collection.slug} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 relative`}>
                   
                   {/* Huge Background Numeral */}
-                  <div className="absolute top-[10%] sm:top-[12%] md:top-1/2 md:-translate-y-1/2 left-1/2 md:left-[10%] -translate-x-1/2 md:translate-x-0 text-[10rem] sm:text-[12rem] md:text-[25rem] font-serif font-light text-off-white/5 pointer-events-none select-none z-0 tracking-tighter">
+                  <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? 'left-[-5%]' : 'right-[-5%]'} text-[12rem] md:text-[25rem] font-serif font-light text-off-white/5 pointer-events-none select-none z-0 tracking-tighter`}>
                     0{index + 1}
                   </div>
 
                   {/* Image */}
-                  <div className="w-[85%] sm:w-[70%] md:w-[45%] lg:w-[50%] aspect-[4/5] md:aspect-[4/3] z-10 relative mb-8 mt-12 md:m-0 flex-shrink-0 md:mr-16 xl:mr-24">
-                     <Link href={`/collections/${collection.slug}`} className="block group w-full h-full relative overflow-hidden md:ring-0 ring-1 ring-gold/20 bg-deep-ink">
+                  <div className="w-full md:w-[60%] z-10 relative">
+                     <Link href={`/collections/${collection.slug}`} className="block group relative w-full aspect-[4/5] md:aspect-[4/3] overflow-hidden">
                        <CurtainReveal>
                          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="w-full h-full relative">
-                           <PremiumImage src={collection.image} alt={collection.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                           <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700 pointer-events-none md:block hidden" />
+                           <PremiumImage src={collection.image} alt={collection.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 60vw" />
+                           <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
                          </motion.div>
                        </CurtainReveal>
                      </Link>
                   </div>
 
                   {/* Typography Block */}
-                  <div className="w-full md:w-[40%] lg:w-[35%] flex-shrink-0 flex flex-col items-center md:items-start text-center md:text-left z-20">
-                    <h3 className="text-display text-4xl md:text-5xl lg:text-6xl text-off-white mb-4 md:mb-6">
-                      {collection.title}
-                    </h3>
-                    <p className="text-cream/60 text-base md:text-xl font-light mb-6 md:mb-10 max-w-[280px] md:max-w-md">
-                      {collection.tagline}
-                    </p>
-                    <Magnetic strength={15}>
-                       <Link href={`/collections/${collection.slug}`} className="gold-link text-eyebrow text-gold/80 inline-flex items-center gap-4 py-2">
-                         <span>Explore Pillar</span>
-                         <span>→</span>
-                       </Link>
-                    </Magnetic>
-                    <a
-                      href={collection.catalogueUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hidden md:inline-flex group items-center gap-2 text-cream/40 text-xs uppercase tracking-[0.2em] font-sans mt-6 hover:text-gold/70 transition-colors duration-400"
-                    >
-                      <span>View Catalogue</span>
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </a>
+                  <div className={`w-full md:w-[40%] flex flex-col z-20 mt-8 md:mt-0 relative ${isEven ? 'md:pl-8' : 'md:pr-8'}`}>
+                    <SectionReveal>
+                      <h3 className="text-display text-4xl md:text-5xl lg:text-6xl text-off-white mb-6">
+                        {collection.title}
+                      </h3>
+                      <p className="text-cream/60 text-lg md:text-xl font-light mb-10 max-w-md">
+                        {collection.tagline}
+                      </p>
+                      <Magnetic strength={15}>
+                         <Link href={`/collections/${collection.slug}`} className="gold-link text-eyebrow text-gold/80 inline-flex items-center gap-4 py-2">
+                           <span>Explore Pillar</span>
+                           <span>→</span>
+                         </Link>
+                      </Magnetic>
+                      <a
+                        href={collection.catalogueUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 text-cream/40 text-xs uppercase tracking-[0.2em] font-sans mt-4 hover:text-gold/70 transition-colors duration-400"
+                      >
+                        <span>View Catalogue</span>
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                      </a>
+                    </SectionReveal>
                   </div>
+
                 </div>
-              ))}
-            </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

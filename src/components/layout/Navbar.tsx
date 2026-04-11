@@ -60,10 +60,8 @@ export default function Navbar() {
                 alt="Casa Bliss"
                 width={160}
                 height={80}
-                className="object-contain object-left"
-                style={{ width: "auto", height: "100%" }}
+                className="w-auto h-full object-contain object-left"
                 priority
-                loading="eager"
               />
             </motion.div>
           </Link>

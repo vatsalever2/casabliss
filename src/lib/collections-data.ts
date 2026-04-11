@@ -48,7 +48,7 @@ export const collections: Collection[] = [
     slug: "bedroom",
     title: "Bedroom",
     tagline: "Where the day ends and quality begins.",
-    image: "/images/collection-bedroom.jpg",
+    image: "/images/collection-bedroom-v2.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Bedroom
     stories: [
       {
@@ -57,7 +57,7 @@ export const collections: Collection[] = [
         description:
           "Beds engineered for silence and absolute comfort. Premium tailoring meets robust architectural frames.",
         materials: "Solid ash frame · Premium upholstery · Integrated lighting",
-        image: "/images/collection-bedroom.jpg",
+        image: "/images/collection-bedroom-v2.jpg",
       },
       {
         slug: "nightstands",
@@ -65,7 +65,7 @@ export const collections: Collection[] = [
         description:
           "Essential companions. Storage units that blend seamlessly into the bedroom's calm aesthetic.",
         materials: "Walnut veneer · Soft-close drawers · Brass detailing",
-        image: "/images/collection-bedroom.jpg",
+        image: "/images/collection-bedroom-v2.jpg",
       },
     ],
   },

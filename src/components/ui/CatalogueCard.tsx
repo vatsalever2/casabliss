@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Magnetic from "@/components/ui/Magnetic";
+
 
 interface CatalogueCardProps {
   title: string;

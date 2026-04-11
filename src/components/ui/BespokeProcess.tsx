@@ -36,7 +36,7 @@ export default function BespokeProcess() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
         
         {/* Left: Interactive Sticky Info */}
-        <div className="w-full lg:w-1/2 flex flex-col relative">
+        <div className="w-full lg:w-1/2 flex flex-col relative z-10">
           <div className="sticky top-32">
             <SectionReveal>
               <span className="text-gold/60 text-xs md:text-sm tracking-[0.2em] uppercase font-sans mb-6 block">
@@ -91,7 +91,8 @@ export default function BespokeProcess() {
         </div>
 
         {/* Right: Dynamic Image Preview */}
-        <div className="w-full lg:w-1/2 h-[50vh] lg:h-[80vh] min-h-[400px] relative mt-12 lg:mt-0">
+        <div className="absolute lg:relative inset-0 lg:inset-auto w-full lg:w-1/2 h-full lg:h-[80vh] lg:min-h-[400px] mt-0 z-0 lg:z-auto opacity-25 lg:opacity-100 pointer-events-none lg:pointer-events-auto transition-opacity duration-1000">
+          <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-deep-ink via-deep-ink/80 to-deep-ink/40 z-10" />
           <AnimatePresence mode="popLayout">
             <motion.div
               key={activeStep}
@@ -99,7 +100,7 @@ export default function BespokeProcess() {
               animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
               exit={{ opacity: 0, filter: "blur(10px)", scale: 1.05 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0 overflow-hidden shadow-2xl"
+              className="absolute inset-0 overflow-hidden lg:shadow-2xl"
             >
                <PremiumImage 
                  src={steps[activeStep].image} 
@@ -108,7 +109,7 @@ export default function BespokeProcess() {
                  className="object-cover" 
                  sizes="(max-width: 1024px) 100vw, 50vw"
                />
-               <div className="absolute inset-0 bg-deep-ink/10 mix-blend-multiply" />
+               <div className="absolute inset-0 bg-deep-ink/10 mix-blend-multiply lg:block hidden" />
             </motion.div>
           </AnimatePresence>
         </div>

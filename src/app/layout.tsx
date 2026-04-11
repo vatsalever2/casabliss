@@ -64,7 +64,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmSans.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col relative w-full overflow-x-hidden min-h-screen" suppressHydrationWarning>
+      <body className="flex flex-col relative w-full overflow-x-clip min-h-screen" suppressHydrationWarning>
         <SmoothScrolling>
           <Preloader />
           <NoiseOverlay />
