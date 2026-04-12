@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import SectionReveal from "@/components/ui/SectionReveal";
 import Magnetic from "@/components/ui/Magnetic";
 import CurtainReveal from "@/components/ui/CurtainReveal";
+import ManifestoStripe from "@/components/ui/ManifestoStripe";
 import GlobalPedigree from "@/components/ui/GlobalPedigree";
 import FeaturedSpaces from "@/components/ui/FeaturedSpaces";
 import BespokeProcess from "@/components/ui/BespokeProcess";
@@ -92,7 +93,7 @@ export default function HomePage() {
             transition={{ duration: 1.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="mb-8"
           >
-            <span className="text-gold/80 text-xs md:text-sm tracking-[0.3em] uppercase font-sans">
+            <span className="text-gold/80 text-xs md:text-sm tracking-[0.3em] uppercase font-sans invisible select-none">
               Welcome to
             </span>
           </motion.div>
@@ -109,7 +110,7 @@ export default function HomePage() {
               alt="Casa Bliss"
               width={800}
               height={200}
-              className="w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] h-auto object-contain brightness-0 invert"
+              className="w-[320px] sm:w-[400px] md:w-[560px] lg:w-[700px] h-auto object-contain brightness-0 invert"
               priority
             />
           </motion.div>
@@ -125,7 +126,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed"
+            className="text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed invisible select-none"
           >
             Curated luxury living. <br className="md:hidden" />
             Sourced from the world&apos;s most <i className="italic font-light text-gold/90">exclusive</i> factories.
@@ -149,6 +150,8 @@ export default function HomePage() {
           </div>
         </motion.div>
       </section>
+
+      <ManifestoStripe />
 
       {/* ═══════════════════════════════════════════════════
           PHILOSOPHY — Editorial Parallax
