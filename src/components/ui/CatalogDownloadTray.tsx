@@ -12,26 +12,23 @@ export default function CatalogDownloadTray({
   categoryName,
   pdfUrl,
 }: CatalogDownloadTrayProps) {
-  const [state, setState] = useState<"idle" | "downloading" | "complete">("idle");
+  const [state, setState] = useState<"idle" | "opening" | "complete">("idle");
 
-  const handleDownload = useCallback(() => {
-    setState("downloading");
+  const handleOpen = useCallback(() => {
+    setState("opening");
 
-    // Trigger actual download
-    const a = document.createElement("a");
-    a.href = pdfUrl;
-    a.download = `${categoryName}-catalog.pdf`;
-    a.click();
+    // Open the Google Drive link in a new tab
+    window.open(pdfUrl, "_blank", "noopener,noreferrer");
 
-    // Simulate progress
-    setTimeout(() => setState("complete"), 2000);
-    setTimeout(() => setState("idle"), 5000);
-  }, [categoryName, pdfUrl]);
+    // Brief feedback, then reset
+    setTimeout(() => setState("complete"), 1200);
+    setTimeout(() => setState("idle"), 4000);
+  }, [pdfUrl]);
 
   return (
     <>
       <button
-        onClick={handleDownload}
+        onClick={handleOpen}
         disabled={state !== "idle"}
         className="group relative flex items-center justify-center gap-6 md:gap-10 py-5 px-8 md:px-12 border border-white/20 hover:border-gold/40 bg-white/[0.02] transition-colors duration-[1000ms] ease-out rounded-full backdrop-blur-md overflow-hidden"
       >
@@ -39,7 +36,7 @@ export default function CatalogDownloadTray({
         <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-[1000ms] ease-out" />
         
         <span className="text-[10px] md:text-xs uppercase font-sans tracking-[0.4em] text-off-white/80 group-hover:text-gold transition-colors duration-[800ms] relative z-10 pt-0.5">
-          {state === "idle" ? "Download Catalog" : state === "downloading" ? "Downloading..." : "Retrieved"}
+          {state === "idle" ? "View Catalogue" : state === "opening" ? "Opening..." : "Opened"}
         </span>
         
         {/* Micro-interaction Container */}
@@ -58,7 +55,7 @@ export default function CatalogDownloadTray({
                  </div>
               </>
            )}
-           {state === "downloading" && (
+           {state === "opening" && (
               <motion.div 
                  animate={{ opacity: [0.3, 1, 0.3] }} 
                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
@@ -80,7 +77,7 @@ export default function CatalogDownloadTray({
             exit={{ y: 40, opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            {state === "downloading" ? (
+            {state === "opening" ? (
               <div className="flex items-center gap-4">
                  <motion.div 
                    className="w-3 h-3 border border-t-gold border-r-gold border-b-transparent border-l-transparent rounded-full"
@@ -88,14 +85,14 @@ export default function CatalogDownloadTray({
                    transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
                  />
                  <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-sans text-cream/70">
-                   Compiling {categoryName} Sourcebook...
+                   Opening {categoryName} Catalogue...
                  </span>
               </div>
             ) : (
               <div className="flex items-center gap-4">
                  <div className="w-1 h-1 bg-gold rounded-full" />
                  <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-sans text-off-white">
-                   Saved to your device
+                   Opening in new tab
                  </span>
               </div>
             )}

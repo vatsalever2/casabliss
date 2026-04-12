@@ -27,7 +27,7 @@ export default function HomePage() {
     target: philosophyRef,
     offset: ["start end", "end start"],
   });
-  
+
   const y1 = useTransform(philosophyScrollY, [0, 1], ["-10%", "10%"]);
   const y2 = useTransform(philosophyScrollY, [0, 1], ["15%", "-15%"]);
 
@@ -58,7 +58,7 @@ export default function HomePage() {
           HERO — Premium Crossfade Slider
           ═══════════════════════════════════════════════════ */}
       <section ref={containerRef} style={{ position: "relative" }} className="relative h-[100svh] w-full bg-deep-ink overflow-hidden flex items-center justify-center">
-        
+
         {/* Breathing Crossfade Background Layer */}
         <motion.div style={{ y }} className="absolute inset-0 z-0">
           <AnimatePresence mode="popLayout">
@@ -86,60 +86,68 @@ export default function HomePage() {
 
         {/* Master Typography Layer - Centered Elegant Luxury */}
         <div className="relative z-20 w-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center text-center pointer-events-none">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="mb-8"
-            >
-              <span className="text-gold/80 text-xs md:text-sm tracking-[0.3em] uppercase font-sans">
-                Welcome to
-              </span>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="mb-8"
+          >
+            <span className="text-gold/80 text-xs md:text-sm tracking-[0.3em] uppercase font-sans">
+              Welcome to
+            </span>
+          </motion.div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-display text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] text-off-white tracking-tight leading-[1] mb-10"
-            >
-              CASA BLISS
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 1.5, delay: 0.8 }}
-              className="w-16 h-px bg-gold/50 mb-10"
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            className="mb-10"
+          >
+            <h1 className="sr-only">Casa Bliss</h1>
+            <PremiumImage
+              src="/images/casabliss_name-removebg.png"
+              alt="Casa Bliss"
+              width={800}
+              height={200}
+              className="w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] h-auto object-contain brightness-0 invert"
+              priority
             />
+          </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed"
-            >
-              Curated luxury living. <br className="md:hidden" />
-              Sourced from the world&apos;s most <i className="italic font-light text-gold/90">exclusive</i> factories.
-            </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 1.5, delay: 0.8 }}
+            className="w-16 h-px bg-gold/50 mb-10"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed"
+          >
+            Curated luxury living. <br className="md:hidden" />
+            Sourced from the world&apos;s most <i className="italic font-light text-gold/90">exclusive</i> factories.
+          </motion.p>
         </div>
 
         {/* Scroll indicator */}
         <motion.div
-           className="absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-20"
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ delay: 1.5, duration: 1 }}
-         >
-           <div className="flex flex-col items-center gap-4">
-             <span className="text-gold/40 text-[10px] tracking-[0.2em] uppercase font-sans">Scroll</span>
-             <motion.div
-               className="w-px h-16 bg-gradient-to-b from-gold/40 to-transparent"
-               animate={{ y: [0, 8, 0], opacity: [0.3, 1, 0.3] }}
-               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-             />
-           </div>
-         </motion.div>
+          className="absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+        >
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-gold/40 text-[10px] tracking-[0.2em] uppercase font-sans">Scroll</span>
+            <motion.div
+              className="w-px h-16 bg-gradient-to-b from-gold/40 to-transparent"
+              animate={{ y: [0, 8, 0], opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+        </motion.div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
@@ -147,9 +155,9 @@ export default function HomePage() {
           ═══════════════════════════════════════════════════ */}
       <section ref={philosophyRef} style={{ position: "relative" }} className="py-32 md:py-48 px-6 lg:px-12 relative overflow-hidden bg-deep-ink">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen max-w-7xl h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-        
+
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
-          
+
           {/* Left: Typography */}
           <div className="w-full md:w-1/2 flex flex-col z-10 relative">
             <SectionReveal delay={0}>
@@ -160,7 +168,7 @@ export default function HomePage() {
                 We source only what we would place in our <i className="italic font-light pr-1 text-gold/90">own</i> home.
               </h2>
             </SectionReveal>
-            
+
             <SectionReveal delay={0.2}>
               <p className="text-sans text-cream/70 text-lg leading-relaxed mb-6 max-w-md">
                 Every piece in our catalogue is chosen for longevity, proportion, and absolute material honesty. We do not deal in fleeting trends.
@@ -176,25 +184,25 @@ export default function HomePage() {
 
           {/* Right: Parallax Image Composition */}
           <div className="w-full md:w-1/2 relative h-[60vh] md:h-[80vh] min-h-[500px]">
-             {/* Main Image */}
-             <motion.div 
-               className="absolute top-0 right-0 w-[85%] h-[85%] overflow-hidden z-10 shadow-2xl"
-               style={{ y: y1 }}
-             >
-                <div className="absolute inset-0 bg-deep-ink/10 z-10 pointer-events-none" />
-                <PremiumImage src="/images/vignette-1.jpg" alt="Luxury detail" fill className="object-cover opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
-             </motion.div>
-             
-             {/* Offset Floating Image */}
-             <motion.div 
-               className="absolute bottom-0 left-0 w-[55%] h-[45%] overflow-hidden z-20 shadow-[-10px_20px_40px_rgba(0,0,0,0.5)] border border-gold/10"
-               style={{ y: y2 }}
-             >
-                <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply z-10 pointer-events-none" />
-                <PremiumImage src="/images/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
-             </motion.div>
+            {/* Main Image */}
+            <motion.div
+              className="absolute top-0 right-0 w-[85%] h-[85%] overflow-hidden z-10 shadow-2xl"
+              style={{ y: y1 }}
+            >
+              <div className="absolute inset-0 bg-deep-ink/10 z-10 pointer-events-none" />
+              <PremiumImage src="/images/vignette-1.jpg" alt="Luxury detail" fill className="object-cover opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
+            </motion.div>
+
+            {/* Offset Floating Image */}
+            <motion.div
+              className="absolute bottom-0 left-0 w-[55%] h-[45%] overflow-hidden z-20 shadow-[-10px_20px_40px_rgba(0,0,0,0.5)] border border-gold/10"
+              style={{ y: y2 }}
+            >
+              <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply z-10 pointer-events-none" />
+              <PremiumImage src="/images/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
+            </motion.div>
           </div>
-          
+
         </div>
       </section>
 
@@ -212,7 +220,7 @@ export default function HomePage() {
             <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
               <span className="text-eyebrow text-gold/60 mb-6">The Collection</span>
               <h2 className="text-display text-4xl md:text-5xl lg:text-7xl text-off-white relative z-10 leading-[1.1]">
-                Four Pillars. <br/> <i className="italic font-light text-gold/80">One Standard.</i>
+                Four Pillars. <br /> <i className="italic font-light text-gold/80">One Standard.</i>
               </h2>
               <div className="mt-10">
                 <Magnetic strength={15}>
@@ -238,7 +246,7 @@ export default function HomePage() {
             <motion.div style={{ x: scrollX }} className="flex w-[400vw] h-full items-center">
               {collections.map((collection, index) => (
                 <div key={collection.slug} className="w-[100vw] h-full flex flex-col md:flex-row items-center justify-center p-6 md:px-24 relative overflow-hidden">
-                  
+
                   {/* Huge Background Numeral */}
                   <div className="absolute top-[10%] sm:top-[12%] md:top-1/2 md:-translate-y-1/2 left-1/2 md:left-[10%] -translate-x-1/2 md:translate-x-0 text-[10rem] sm:text-[12rem] md:text-[25rem] font-serif font-light text-off-white/5 pointer-events-none select-none z-0 tracking-tighter">
                     0{index + 1}
@@ -246,14 +254,14 @@ export default function HomePage() {
 
                   {/* Image */}
                   <div className="w-[85%] sm:w-[70%] md:w-[45%] lg:w-[50%] aspect-[4/5] md:aspect-[4/3] z-10 relative mb-8 mt-12 md:m-0 flex-shrink-0 md:mr-16 xl:mr-24">
-                     <Link href={`/collections/${collection.slug}`} className="block group w-full h-full relative overflow-hidden md:ring-0 ring-1 ring-gold/20 bg-deep-ink">
-                       <CurtainReveal>
-                         <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="w-full h-full relative">
-                           <PremiumImage src={collection.image} alt={collection.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                           <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700 pointer-events-none md:block hidden" />
-                         </motion.div>
-                       </CurtainReveal>
-                     </Link>
+                    <Link href={`/collections/${collection.slug}`} className="block group w-full h-full relative overflow-hidden md:ring-0 ring-1 ring-gold/20 bg-deep-ink">
+                      <CurtainReveal>
+                        <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="w-full h-full relative">
+                          <PremiumImage src={collection.image} alt={collection.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                          <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700 pointer-events-none md:block hidden" />
+                        </motion.div>
+                      </CurtainReveal>
+                    </Link>
                   </div>
 
                   {/* Typography Block */}
@@ -265,10 +273,10 @@ export default function HomePage() {
                       {collection.tagline}
                     </p>
                     <Magnetic strength={15}>
-                       <Link href={`/collections/${collection.slug}`} className="gold-link text-eyebrow text-gold/80 inline-flex items-center gap-4 py-2">
-                         <span>Explore Pillar</span>
-                         <span>→</span>
-                       </Link>
+                      <Link href={`/collections/${collection.slug}`} className="gold-link text-eyebrow text-gold/80 inline-flex items-center gap-4 py-2">
+                        <span>Explore Pillar</span>
+                        <span>→</span>
+                      </Link>
                     </Magnetic>
                     <a
                       href={collection.catalogueUrl}
@@ -303,11 +311,11 @@ export default function HomePage() {
       <section className="relative py-32 md:py-48 px-6 lg:px-12 flex items-center justify-center overflow-hidden border-t border-gold/10">
         {/* Background Layer */}
         <div className="absolute inset-0 z-0">
-          <PremiumImage 
-            src="/images/vignette-2.jpg" 
-            alt="Casa Bliss Luxury Sourcing" 
-            fill 
-            className="object-cover object-center translate-y-[-10%] scale-105" 
+          <PremiumImage
+            src="/images/vignette-2.jpg"
+            alt="Casa Bliss Luxury Sourcing"
+            fill
+            className="object-cover object-center translate-y-[-10%] scale-105"
           />
           <div className="absolute inset-0 bg-deep-ink/90 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-deep-ink via-transparent to-deep-ink" />
@@ -316,7 +324,7 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col md:flex-row items-center md:items-end justify-between gap-12">
-          
+
           <div className="max-w-2xl text-center md:text-left">
             <SectionReveal>
               <h2 className="text-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-off-white leading-[1.1] mb-6">
@@ -346,7 +354,7 @@ export default function HomePage() {
               </Magnetic>
             </SectionReveal>
           </div>
-          
+
         </div>
       </section>
     </>
