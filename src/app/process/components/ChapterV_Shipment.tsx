@@ -1,24 +1,13 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function ChapterV_Shipment() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const pathLength = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
-
   return (
     <motion.div 
-      ref={containerRef}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-5%" }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-7xl mx-auto pr-8 pl-[4.5rem] md:px-12 flex flex-col md:flex-row items-center gap-12 md:gap-32 relative"
     >
@@ -33,56 +22,54 @@ export default function ChapterV_Shipment() {
 
         <div className="flex gap-10 md:gap-12 text-left md:text-right">
            <div className="flex flex-col items-start md:items-end">
-             <span className="text-display text-3xl md:text-4xl text-off-white">6-8</span>
-             <span className="text-eyebrow text-gold/60 text-[10px] mt-1 text-left md:text-right w-full">Weeks Transit</span>
-           </div>
-           <div className="w-px h-10 md:h-12 bg-gold/20" />
-           <div className="flex flex-col items-start md:items-end">
-             <span className="text-display text-3xl md:text-4xl text-off-white">100%</span>
-             <span className="text-eyebrow text-gold/60 text-[10px] mt-1 text-left md:text-right w-full">Insured</span>
+             <span className="text-display text-3xl md:text-4xl text-off-white">8-12</span>
+             <span className="text-eyebrow text-gold/60 text-[10px] mt-1 text-left md:text-right w-full">Months Transit</span>
            </div>
         </div>
       </div>
 
       <div className="w-full md:w-[45%] relative order-1 md:order-2 mr-auto flex justify-center items-center h-[200px] md:h-[300px]">
-        {/* Animated Map Element instead of Image */}
-        <svg viewBox="0 0 800 400" className="w-full h-full drop-shadow-[0_0_20px_rgba(212,175,55,0.15)] overflow-visible">
+        {/* Premium Logistics Manifest Element */}
+        <div className="relative w-[280px] md:w-[340px] h-[180px] md:h-[220px] border border-gold/10 bg-deep-ink/50 backdrop-blur-md flex flex-col justify-between p-6 overflow-hidden group">
           
-          {/* Ethereal Glow Arc */}
-          <motion.path 
-            d="M 650,250 Q 400,0 150,250" 
-            className="stroke-gold/20 fill-none stroke-[4]"
-            style={{ pathLength }}
-            filter="blur(8px)"
+          {/* Ambient Glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent opacity-50" />
+
+          {/* Scanning light line */}
+          <motion.div 
+            animate={{ top: ["-10%", "110%", "-10%"] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            className="absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent shadow-[0_0_15px_rgba(212,175,55,0.4)] z-20"
           />
           
-          {/* Sharp Main Arc */}
-          <motion.path 
-            d="M 650,250 Q 400,0 150,250" 
-            className="stroke-gold/80 fill-none stroke-[2]"
-            strokeDasharray="6 12"
-            style={{ pathLength }}
-          />
+          <div className="flex justify-between items-start relative z-10">
+            <div className="flex flex-col gap-1">
+              <span className="text-[9px] uppercase tracking-[0.3em] text-gold/50 font-sans">Origin</span>
+              <span className="text-base md:text-xl font-serif italic text-off-white">Foshan, CN</span>
+            </div>
+            <span className="text-[9px] font-mono tracking-widest text-gold/30">23.02&deg;N 113.12&deg;E</span>
+          </div>
           
-          {/* Pulsing Nodes - Foshan */}
-          <circle cx="650" cy="250" r="5" className="fill-gold" />
-          <motion.circle 
-            cx="650" cy="250" r="24" className="stroke-gold/50 fill-none stroke-1" 
-            initial={{ scale: 0.2, opacity: 1 }} animate={{ scale: 1.5, opacity: 0 }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeOut" }} 
-          />
+          <div className="w-full h-px bg-gold/10 relative my-4 z-10 flex items-center">
+            <motion.div 
+              className="absolute left-0 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(212,175,55,1)]"
+              animate={{ left: ["0%", "100%", "0%"] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+
+          <div className="flex justify-between items-end relative z-10">
+            <span className="text-[9px] font-mono tracking-widest text-gold/30">SECURE INBOUND</span>
+            <div className="flex flex-col gap-1 text-right">
+              <span className="text-[9px] uppercase tracking-[0.3em] text-gold/50 font-sans">Destination</span>
+              <span className="text-base md:text-xl font-serif italic text-off-white">Your Estate</span>
+            </div>
+          </div>
           
-          {/* Pulsing Nodes - Destination */}
-          <circle cx="150" cy="250" r="5" className="fill-gold" />
-          <motion.circle 
-            cx="150" cy="250" r="24" className="stroke-gold/50 fill-none stroke-1" 
-            initial={{ scale: 0.2, opacity: 1 }} animate={{ scale: 1.5, opacity: 0 }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeOut", delay: 1.25 }} 
-          />
-          
-          <text x="670" y="255" className="fill-cream text-[14px] md:text-[14px] tracking-[0.25em] font-sans uppercase drop-shadow-md">Foshan</text>
-          {/* Two text nodes for responsive positioning */}
-          <text x="-50" y="255" className="fill-cream text-[14px] tracking-[0.25em] font-sans uppercase drop-shadow-md md:hidden">Your City</text>
-          <text x="30" y="255" className="fill-cream text-[14px] tracking-[0.25em] font-sans uppercase drop-shadow-md hidden md:block">Your City</text>
-        </svg>
+          {/* Corner Accents */}
+          <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-gold/30" />
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gold/30" />
+        </div>
       </div>
     </motion.div>
   );

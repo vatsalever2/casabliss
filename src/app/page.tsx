@@ -258,12 +258,10 @@ export default function HomePage() {
                   {/* Image */}
                   <div className="w-[85%] sm:w-[70%] md:w-[45%] lg:w-[50%] aspect-[4/5] md:aspect-[4/3] z-10 relative mb-8 mt-12 md:m-0 flex-shrink-0 md:mr-16 xl:mr-24">
                     <Link href={`/collections/${collection.slug}`} className="block group w-full h-full relative overflow-hidden md:ring-0 ring-1 ring-gold/20 bg-deep-ink">
-                      <CurtainReveal>
-                        <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="w-full h-full relative">
-                          <PremiumImage src={collection.image} alt={collection.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                          <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700 pointer-events-none md:block hidden" />
-                        </motion.div>
-                      </CurtainReveal>
+                      <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="w-full h-full relative">
+                        <PremiumImage src={collection.image} alt={collection.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                        <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700 pointer-events-none md:block hidden" />
+                      </motion.div>
                     </Link>
                   </div>
 

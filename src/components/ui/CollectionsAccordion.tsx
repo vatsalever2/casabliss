@@ -4,11 +4,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PremiumImage from "@/components/ui/PremiumImage";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Collection } from "@/lib/collections-data";
 
 export default function CollectionsAccordion({ collections }: { collections: Collection[] }) {
   // Default to the first item being open
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
+  const router = useRouter();
 
   return (
     <div className="w-full h-full flex flex-col md:flex-row overflow-hidden bg-deep-ink relative z-10">
@@ -19,7 +21,13 @@ export default function CollectionsAccordion({ collections }: { collections: Col
           <motion.div
             key={category.slug}
             onMouseEnter={() => setHoveredIndex(index)}
-            onClick={() => setHoveredIndex(index)}
+            onClick={() => {
+              if (isActive) {
+                router.push(`/collections/${category.slug}`);
+              } else {
+                setHoveredIndex(index);
+              }
+            }}
             layout
             initial={false}
             animate={{

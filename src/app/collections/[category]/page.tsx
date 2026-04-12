@@ -148,27 +148,49 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Act III: The Gallery Array (Cinematic Overlays) */}
+      {/* Act III: The Gallery Array (Editorial Offset Grid on PC) */}
       <section className="w-full bg-deep-ink">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
+        <div className="flex overflow-x-auto overflow-y-hidden gap-4 px-4 md:px-12 lg:px-24 md:grid md:grid-cols-12 md:gap-x-8 md:gap-y-32 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] py-8 md:py-32">
            {await Promise.all(collection.gallery.map(async (img, i) => {
                const imgBlur = await getLocalImageBlur(img);
-               const isWide = i === 0 || i === 3;
+               
+               // Desktop Editorial Grid Logic (cycles every 4 images)
+               let desktopClass = "";
+               let desktopSizes = "";
+               const patternIndex = i % 4;
+               
+               if (patternIndex === 0) {
+                 // Image 1: Massive cinematic lead
+                 desktopClass = "md:col-span-12 md:col-start-1 md:aspect-[21/9]";
+                 desktopSizes = "(max-width: 768px) 85vw, 100vw";
+               } else if (patternIndex === 1) {
+                 // Image 2: Staggered left portrait
+                 desktopClass = "md:col-span-5 md:col-start-2 md:aspect-[3/4] md:mt-48";
+                 desktopSizes = "(max-width: 768px) 85vw, 40vw";
+               } else if (patternIndex === 2) {
+                 // Image 3: Standard right portrait, floating higher up
+                 desktopClass = "md:col-span-4 md:col-start-8 md:aspect-[4/5]";
+                 desktopSizes = "(max-width: 768px) 85vw, 33vw";
+               } else {
+                 // Image 4: Centered wide conclusion
+                 desktopClass = "md:col-span-8 md:col-start-3 md:aspect-[16/9] md:mt-24";
+                 desktopSizes = "(max-width: 768px) 85vw, 70vw";
+               }
                
                return (
-                 <div key={i} className={`relative overflow-hidden group ${isWide ? 'md:col-span-2 aspect-[4/3] md:aspect-[16/9]' : 'aspect-[4/5]'} bg-black`}>
-                    <CurtainReveal>
+                 <div key={i} className={`relative overflow-hidden group flex-shrink-0 w-[85vw] snap-center aspect-[4/5] md:w-auto md:snap-align-none bg-black rounded-sm md:rounded-none ${desktopClass}`}>
+                    <div className="w-full h-full relative">
                         <PremiumImage 
                           src={img} 
                           fill 
                           alt={`${collection.title} Space ${i + 1}`}
                           className="object-cover transition-transform duration-[3s] ease-out md:group-hover:scale-[1.05]"
-                          sizes={isWide ? "(max-width: 768px) 100vw, 100vw" : "(max-width: 768px) 100vw, 50vw"}
+                          sizes={desktopSizes}
                           blurDataURL={imgBlur}
                         />
                         
                         {/* Mobile Overlay (Always visible gradient for text readability) */}
-                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-soft-black via-soft-black/40 to-transparent opacity-90 md:opacity-0 pointer-events-none" />
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-soft-black via-soft-black/50 to-transparent opacity-90 md:opacity-0 pointer-events-none" />
                         
                         {/* Desktop Overlay (Darkened, clears on hover) */}
                         <div className="absolute inset-0 hidden md:block bg-black/40 xl:bg-black/60 transition-colors duration-1000 group-hover:bg-transparent mix-blend-multiply pointer-events-none" />
@@ -182,7 +204,7 @@ export default async function CategoryPage({ params }: PageProps) {
                              {collection.title}
                            </h3>
                         </div>
-                    </CurtainReveal>
+                    </div>
                  </div>
                );
            }))}
@@ -190,39 +212,40 @@ export default async function CategoryPage({ params }: PageProps) {
       </section>
 
       {/* Act IV: The Catalogues */}
-      <section className="w-full bg-soft-black relative overflow-hidden flex flex-col items-center py-32 md:py-48 px-6">
+      <section className="w-full bg-soft-black relative overflow-hidden flex flex-col items-center py-20 px-6">
         <SectionReveal>
-          {/* A monolithic, ultra-premium frosted glass card */}
-          <div className="relative z-10 w-full max-w-[1200px] mx-auto border border-white/5 bg-white/[0.01] backdrop-blur-3xl p-12 md:p-20 lg:p-24 flex flex-col items-center text-center overflow-hidden">
-            
-             {/* Atmospheric internal glow */}
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
+          {/* Refined, minimal elegant card */}
+          <div className="relative z-10 w-full max-w-5xl mx-auto border border-white/5 bg-deep-ink p-10 md:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-10">
+             
+             <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent pointer-events-none" />
 
-             {/* Content */}
-             <div className="w-full flex items-center justify-center gap-6 mb-12 relative z-20">
-               <div className="w-16 h-px bg-gold/30" />
-               <p className="text-[10px] md:text-xs text-gold/80 uppercase tracking-[0.5em] font-sans">
-                 Factory Direct Catalogues
+             {/* Text Block */}
+             <div className="flex flex-col items-center md:items-start max-w-lg relative z-20">
+               <div className="w-12 h-px bg-gold/30 mb-4 hidden md:block" />
+               <p className="text-[10px] md:text-xs text-gold/80 uppercase tracking-[0.4em] font-sans mb-3 md:mb-4">
+                 Access The Archives
                </p>
-               <div className="w-16 h-px bg-gold/30" />
+               <h2 className="text-display font-light text-4xl md:text-5xl text-off-white mb-4 leading-tight tracking-tight">
+                 {collection.title} Catalogue.
+               </h2>
+               <p className="text-cream/50 font-light leading-relaxed text-sm md:text-base tracking-wide text-balance">
+                 Review pristine dimensions, architectural material finishes, and global freight parameters direct from the factory floor.
+               </p>
              </div>
-             
-             <h2 className="text-display font-light text-5xl md:text-7xl lg:text-[7rem] text-off-white mb-12 leading-[1.1] tracking-tight relative z-20">
-               The Master<br/>Catalogues.
-             </h2>
-             
-             <p className="text-cream/50 mb-20 max-w-2xl font-light leading-relaxed text-sm md:text-lg tracking-wide relative z-20 text-balance">
-               Access the comprehensive master catalog for the {collection.title} collection. Review pristine dimensions, architectural material finishes, and global freight parameters.
-             </p>
 
-             {/* Interactive Button Side */}
-             <div className="relative z-20 w-full flex justify-center">
-                 <div className="scale-[1.1] md:scale-[1.2]">
-                   <CatalogDownloadTray
-                     categoryName={collection.title}
-                     pdfUrl={collection.catalogueUrl}
-                   />
-                 </div>
+             {/* Minimal Download Button */}
+             <div className="flex-shrink-0 relative z-20">
+                <a 
+                  href={collection.catalogueUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center justify-center border border-gold/30 bg-gold/5 px-8 md:px-10 py-4 md:py-5 text-[10px] md:text-xs uppercase tracking-[0.25em] font-sans text-off-white hover:bg-gold hover:text-deep-ink hover:border-gold transition-all duration-500"
+                >
+                  <span className="relative z-10 flex items-center gap-4">
+                    <span>View Catalogue</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </span>
+                </a>
              </div>
              
           </div>

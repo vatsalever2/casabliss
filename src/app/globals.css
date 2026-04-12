@@ -36,6 +36,17 @@ body {
   overflow-x: hidden;
 }
 
+/* ─── Anti-Rip Image Protection ─── */
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 /* ─── Typography Classes ─── */
 .text-display {
   font-family: var(--font-serif);

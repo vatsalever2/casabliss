@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import Preloader from "@/components/ui/Preloader";
 import SmoothScrolling from "@/components/ui/SmoothScrolling";
+import WhatsAppConcierge from "@/components/ui/WhatsAppConcierge";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -71,6 +72,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <WhatsAppConcierge />
         </SmoothScrolling>
       </body>
     </html>

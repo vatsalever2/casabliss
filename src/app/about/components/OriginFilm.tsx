@@ -344,12 +344,6 @@ export default function OriginFilm() {
                 title: "Shipping.",
                 desc: "International freight, complete export documentation, and customs clearance handled entirely by us.",
                 img: "/images/vignette-2.jpg"
-              },
-              {
-                step: "04",
-                title: "Installation.",
-                desc: "Damage-free white glove delivery and professional installation at your site.",
-                img: "/images/gallery-3.jpg"
               }
             ].map((node, i) => (
               <ScrollFade key={i} className="pl-8 md:pl-[calc(10%+40px)] flex flex-col md:flex-row gap-12 lg:gap-24 items-center">

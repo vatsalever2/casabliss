@@ -43,38 +43,32 @@ export default function FeaturedSpaces() {
           
           <motion.div style={{ y: y1 }} className="flex flex-col gap-4 sm:gap-8 md:gap-12 mt-12 md:mt-24 z-10 relative">
             <div className="relative aspect-[3/4] w-full group">
-              <CurtainReveal>
-                <div className="w-full h-full relative overflow-hidden">
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                    <PremiumImage src="/images/gallery-1.jpg" alt="Architectural Storage" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                  </motion.div>
-                </div>
-              </CurtainReveal>
+              <div className="w-full h-full relative overflow-hidden">
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
+                  <PremiumImage src="/images/gallery-1.jpg" alt="Architectural Storage" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                </motion.div>
+              </div>
             </div>
           </motion.div>
 
           <motion.div style={{ y: y2 }} className="flex flex-col gap-4 sm:gap-8 md:gap-12 z-20 relative">
             <div className="relative aspect-square w-full group">
-              <CurtainReveal>
-                <div className="w-full h-full relative overflow-hidden">
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                    <PremiumImage src="/images/gallery-2.jpg" alt="Curated Bedroom Piece" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                  </motion.div>
-                </div>
-              </CurtainReveal>
+              <div className="w-full h-full relative overflow-hidden">
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
+                  <PremiumImage src="/images/gallery-2.jpg" alt="Curated Bedroom Piece" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                </motion.div>
+              </div>
             </div>
             
             <div className="relative aspect-[4/3] w-full group">
-              <CurtainReveal>
-                <div className="w-full h-full relative overflow-hidden">
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                    <PremiumImage src="/images/gallery-3.jpg" alt="Dining Environment" fill className="object-cover grayscale-[20%]" sizes="(max-width: 768px) 50vw, 33vw" />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                  </motion.div>
-                </div>
-              </CurtainReveal>
+              <div className="w-full h-full relative overflow-hidden">
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
+                  <PremiumImage src="/images/gallery-3.jpg" alt="Dining Environment" fill className="object-cover grayscale-[20%]" sizes="(max-width: 768px) 50vw, 33vw" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                </motion.div>
+              </div>
             </div>
           </motion.div>
           

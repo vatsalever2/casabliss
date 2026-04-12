@@ -8,7 +8,7 @@ export default function ChapterIII_Showroom() {
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-5%" }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-7xl mx-auto pr-8 pl-[4.5rem] md:px-12 flex flex-col md:flex-row items-center gap-12 md:gap-32 relative"
     >

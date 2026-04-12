@@ -40,28 +40,66 @@ export default function GlobalPedigree() {
       </div>
 
       {/* Scrolling Marquee — Values, not cities */}
-      <div className="relative flex flex-col gap-6 md:gap-10 opacity-60 my-12">
-        <motion.div style={{ x: x1 }} className="flex gap-16 whitespace-nowrap px-10">
-          {[...marqueeWords1, ...marqueeWords1, ...marqueeWords1].map((word, i) => (
-            <div key={`w1-${i}`} className="flex items-center gap-16">
-              <span className="text-4xl md:text-7xl font-sans text-transparent bg-clip-text bg-gradient-to-r from-off-white/80 to-off-white/15 uppercase tracking-tighter">
-                {word}
-              </span>
-              <span className="text-gold/30 text-2xl">✦</span>
-            </div>
-          ))}
-        </motion.div>
+      <div className="relative flex flex-col gap-6 md:gap-10 opacity-60 my-12 overflow-hidden">
+        
+        {/* DESKTOP (Scroll-linked) */}
+        <div className="hidden md:flex flex-col gap-10">
+          <motion.div style={{ x: x1 }} className="flex gap-16 whitespace-nowrap px-10">
+            {[...marqueeWords1, ...marqueeWords1, ...marqueeWords1].map((word, i) => (
+              <div key={`desk-w1-${i}`} className="flex items-center gap-16">
+                <span className="text-4xl md:text-7xl font-sans text-transparent bg-clip-text bg-gradient-to-r from-off-white/80 to-off-white/15 uppercase tracking-tighter">
+                  {word}
+                </span>
+                <span className="text-gold/30 text-2xl">✦</span>
+              </div>
+            ))}
+          </motion.div>
 
-        <motion.div style={{ x: x2 }} className="flex gap-16 whitespace-nowrap px-10">
-          {[...marqueeWords2, ...marqueeWords2, ...marqueeWords2].map((word, i) => (
-            <div key={`w2-${i}`} className="flex items-center gap-16">
-              <span className="text-4xl md:text-7xl font-sans text-transparent bg-clip-text bg-gradient-to-r from-off-white/80 to-off-white/15 uppercase tracking-tighter">
-                {word}
-              </span>
-              <span className="text-gold/30 text-2xl">✦</span>
-            </div>
-          ))}
-        </motion.div>
+          <motion.div style={{ x: x2 }} className="flex gap-16 whitespace-nowrap px-10">
+            {[...marqueeWords2, ...marqueeWords2, ...marqueeWords2].map((word, i) => (
+              <div key={`desk-w2-${i}`} className="flex items-center gap-16">
+                <span className="text-4xl md:text-7xl font-sans text-transparent bg-clip-text bg-gradient-to-r from-off-white/80 to-off-white/15 uppercase tracking-tighter">
+                  {word}
+                </span>
+                <span className="text-gold/30 text-2xl">✦</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* MOBILE (Auto-scrolling) */}
+        <div className="flex md:hidden flex-col gap-6 w-full">
+          <motion.div 
+            animate={{ x: [0, "-50%"] }} 
+            transition={{ repeat: Infinity, ease: "linear", duration: 200 }}
+            className="flex gap-8 whitespace-nowrap w-fit pr-8"
+          >
+            {[...marqueeWords1, ...marqueeWords1, ...marqueeWords1, ...marqueeWords1].map((word, i) => (
+              <div key={`mob-w1-${i}`} className="flex items-center gap-8">
+                <span className="text-4xl font-sans text-transparent bg-clip-text bg-gradient-to-r from-off-white/80 to-off-white/15 uppercase tracking-tighter">
+                  {word}
+                </span>
+                <span className="text-gold/30 text-xl">✦</span>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            animate={{ x: ["-50%", 0] }} 
+            transition={{ repeat: Infinity, ease: "linear", duration: 250 }}
+            className="flex gap-8 whitespace-nowrap w-fit pr-8"
+          >
+            {[...marqueeWords2, ...marqueeWords2, ...marqueeWords2, ...marqueeWords2].map((word, i) => (
+              <div key={`mob-w2-${i}`} className="flex items-center gap-8">
+                <span className="text-4xl font-sans text-transparent bg-clip-text bg-gradient-to-r from-off-white/80 to-off-white/15 uppercase tracking-tighter">
+                  {word}
+                </span>
+                <span className="text-gold/30 text-xl">✦</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
       </div>
       
       {/* Edge Gradients */}
