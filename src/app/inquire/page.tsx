@@ -22,10 +22,10 @@ export default function InquirePage() {
             src="/images/about-sourcing.jpg"
             alt="Casa Bliss Sourcing Atelier"
             fill
+            sizes="(max-width: 768px) 100vw, 45vw"
             className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-[2500ms] ease-luxury"
-            priority
           />
-          <NoiseOverlay opacity={0.55} />
+          <NoiseOverlay />
           {/* Mobile: gradient up from bottom. Desktop: gradient right-to-left into form panel */}
           <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-deep-ink/90 via-deep-ink/30 to-transparent" />
         </CurtainReveal>

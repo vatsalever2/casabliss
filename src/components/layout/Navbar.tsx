@@ -61,6 +61,7 @@ export default function Navbar() {
                 width={160}
                 height={80}
                 className="w-auto h-full object-contain object-left"
+                style={{ width: "auto", height: "100%" }}
                 priority
                 loading="eager"
               />

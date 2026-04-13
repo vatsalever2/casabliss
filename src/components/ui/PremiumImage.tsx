@@ -40,6 +40,7 @@ export default function PremiumImage({ alt, ...props }: PremiumImageProps) {
     <Image
       {...props}
       alt={alt}
+      sizes={props.fill && !props.sizes ? "100vw" : props.sizes}
       onError={() => setHasError(true)}
       className={`${props.className || ""} transition-opacity duration-700`}
     />

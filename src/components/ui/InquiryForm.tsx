@@ -20,14 +20,14 @@ const fieldVariants = {
     transition: {
       delay: 0.3 + i * 0.1,
       duration: 0.75,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
     },
   }),
 };
 
 const errorVariants = {
   hidden: { opacity: 0, y: -6, height: 0 },
-  visible: { opacity: 1, y: 0, height: "auto", transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, height: "auto", transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] } },
   exit: { opacity: 0, y: -4, height: 0, transition: { duration: 0.2 } },
 };
 

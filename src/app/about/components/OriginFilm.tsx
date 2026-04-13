@@ -28,7 +28,7 @@ function ScrollFade({
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [40, 0, 0, -30]);
 
   return (
-    <motion.div ref={ref} style={{ opacity, y }} className={className}>
+    <motion.div ref={ref} style={{ opacity, y }} className={`relative ${className}`}>
       {children}
     </motion.div>
   );
