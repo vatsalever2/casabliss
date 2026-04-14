@@ -17,7 +17,7 @@ export default function FeaturedSpaces() {
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
 
   return (
-    <section ref={scrollRef} className="py-24 md:py-32 px-6 lg:px-12 bg-black relative overflow-hidden">
+    <section ref={scrollRef} style={{ position: "relative" }} className="py-24 md:py-32 px-6 lg:px-12 bg-black relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-off-white/10 to-transparent" />
       
       <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-16 lg:gap-24 items-center">
@@ -45,7 +45,7 @@ export default function FeaturedSpaces() {
             <div className="relative aspect-[3/4] w-full group">
               <div className="w-full h-full relative overflow-hidden">
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                  <PremiumImage src="/images/gallery-1.jpg" alt="Architectural Storage" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
+                  <PremiumImage src="/images/gallery/gallery-1.jpg" alt="Architectural Storage" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 </motion.div>
               </div>
@@ -56,7 +56,7 @@ export default function FeaturedSpaces() {
             <div className="relative aspect-square w-full group">
               <div className="w-full h-full relative overflow-hidden">
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                  <PremiumImage src="/images/gallery-2.jpg" alt="Curated Bedroom Piece" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
+                  <PremiumImage src="/images/gallery/gallery-2.jpg" alt="Curated Bedroom Piece" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 </motion.div>
               </div>
@@ -65,7 +65,7 @@ export default function FeaturedSpaces() {
             <div className="relative aspect-[4/3] w-full group">
               <div className="w-full h-full relative overflow-hidden">
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} className="w-full h-full relative">
-                  <PremiumImage src="/images/gallery-3.jpg" alt="Dining Environment" fill className="object-cover grayscale-[20%]" sizes="(max-width: 768px) 50vw, 33vw" />
+                  <PremiumImage src="/images/gallery/gallery-3.jpg" alt="Dining Environment" fill className="object-cover grayscale-[20%]" sizes="(max-width: 768px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 </motion.div>
               </div>

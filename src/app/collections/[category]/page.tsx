@@ -7,6 +7,7 @@ import SectionReveal from "@/components/ui/SectionReveal";
 import CurtainReveal from "@/components/ui/CurtainReveal";
 import CatalogDownloadTray from "@/components/ui/CatalogDownloadTray";
 import PremiumImage from "@/components/ui/PremiumImage";
+import CollectionGallery from "@/components/ui/CollectionGallery";
 import { getLocalImageBlur } from "@/lib/getImageBlur";
 
 interface PageProps {
@@ -38,6 +39,14 @@ export default async function CategoryPage({ params }: PageProps) {
 
   // Pre-generate the 10-byte blurry Base64 placeholder for the main hero image
   const collectionHeroBlur = await getLocalImageBlur(collection.image);
+
+  const galleryItems = await Promise.all(
+    collection.gallery.map(async (img, i) => ({
+      src: img,
+      alt: `${collection.title} Space ${i + 1}`,
+      blurDataURL: await getLocalImageBlur(img),
+    })),
+  );
 
   return (
     <div className="relative w-full bg-soft-black">
@@ -148,68 +157,8 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Act III: The Gallery Array (Editorial Offset Grid on PC) */}
-      <section className="w-full bg-deep-ink">
-        <div className="flex overflow-x-auto overflow-y-hidden gap-4 px-4 md:px-12 lg:px-24 md:grid md:grid-cols-12 md:gap-x-8 md:gap-y-32 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] py-8 md:py-32">
-           {await Promise.all(collection.gallery.map(async (img, i) => {
-               const imgBlur = await getLocalImageBlur(img);
-               
-               // Desktop Editorial Grid Logic (cycles every 4 images)
-               let desktopClass = "";
-               let desktopSizes = "";
-               const patternIndex = i % 4;
-               
-               if (patternIndex === 0) {
-                 // Image 1: Massive cinematic lead
-                 desktopClass = "md:col-span-12 md:col-start-1 md:aspect-[21/9]";
-                 desktopSizes = "(max-width: 768px) 85vw, 100vw";
-               } else if (patternIndex === 1) {
-                 // Image 2: Staggered left portrait
-                 desktopClass = "md:col-span-5 md:col-start-2 md:aspect-[3/4] md:mt-48";
-                 desktopSizes = "(max-width: 768px) 85vw, 40vw";
-               } else if (patternIndex === 2) {
-                 // Image 3: Standard right portrait, floating higher up
-                 desktopClass = "md:col-span-4 md:col-start-8 md:aspect-[4/5]";
-                 desktopSizes = "(max-width: 768px) 85vw, 33vw";
-               } else {
-                 // Image 4: Centered wide conclusion
-                 desktopClass = "md:col-span-8 md:col-start-3 md:aspect-[16/9] md:mt-24";
-                 desktopSizes = "(max-width: 768px) 85vw, 70vw";
-               }
-               
-               return (
-                 <div key={i} className={`relative overflow-hidden group flex-shrink-0 w-[85vw] snap-center aspect-[4/5] md:w-auto md:snap-align-none bg-black rounded-sm md:rounded-none ${desktopClass}`}>
-                    <div className="w-full h-full relative">
-                        <PremiumImage 
-                          src={img} 
-                          fill 
-                          alt={`${collection.title} Space ${i + 1}`}
-                          className="object-cover transition-transform duration-[3s] ease-out md:group-hover:scale-[1.05]"
-                          sizes={desktopSizes}
-                          blurDataURL={imgBlur}
-                        />
-                        
-                        {/* Mobile Overlay (Always visible gradient for text readability) */}
-                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-soft-black via-soft-black/50 to-transparent opacity-90 md:opacity-0 pointer-events-none" />
-                        
-                        {/* Desktop Overlay (Darkened, clears on hover) */}
-                        <div className="absolute inset-0 hidden md:block bg-black/40 xl:bg-black/60 transition-colors duration-1000 group-hover:bg-transparent mix-blend-multiply pointer-events-none" />
-                        
-                        {/* Architectural Metadata Overlay */}
-                        <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 flex flex-col opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-700 md:translate-y-4 md:group-hover:translate-y-0 z-10 pointer-events-none leading-none">
-                           <span className="text-gold uppercase tracking-[0.4em] text-[10px] md:text-xs font-sans mb-2 md:mb-3 drop-shadow-md">
-                             Plate 0{i + 1}
-                           </span>
-                           <h3 className="text-off-white font-display text-2xl md:text-4xl lg:text-5xl drop-shadow-2xl tracking-wide">
-                             {collection.title}
-                           </h3>
-                        </div>
-                    </div>
-                 </div>
-               );
-           }))}
-        </div>
-      </section>
+      {/* Act III: The Gallery Array */}
+      <CollectionGallery collectionTitle={collection.title} items={galleryItems} />
 
       {/* Act IV: The Catalogues */}
       <section className="w-full bg-soft-black relative overflow-hidden flex flex-col items-center py-20 px-6">

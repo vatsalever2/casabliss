@@ -28,7 +28,7 @@ function ScrollFade({
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [40, 0, 0, -30]);
 
   return (
-    <motion.div ref={ref} style={{ opacity, y }} className={`relative ${className}`}>
+    <motion.div ref={ref} style={{ opacity, y, position: "relative" }} className={`relative ${className}`}>
       {children}
     </motion.div>
   );
@@ -73,7 +73,7 @@ export default function OriginFilm() {
       {/* ═══════════════════════════════════════════════════
           HERO — THE ZOOM THROUGH
           ═══════════════════════════════════════════════════ */}
-      <section ref={heroRef} className="relative w-full h-[250svh]">
+      <section ref={heroRef} style={{ position: "relative" }} className="relative w-full h-[250svh]">
         <div className="sticky top-0 w-full h-[100svh] flex items-center justify-center overflow-hidden bg-black">
           
           <motion.div
@@ -81,7 +81,7 @@ export default function OriginFilm() {
             style={{ scale: heroImageScale, opacity: heroImageOpacity }}
           >
             <PremiumImage
-              src="/images/about-sourcing.jpg"
+              src="/images/about/about-sourcing.jpg"
               alt="Casa Bliss Factory Floor"
               fill
               priority
@@ -124,12 +124,12 @@ export default function OriginFilm() {
       {/* ═══════════════════════════════════════════════════
           SCENE 1 — THE SOURCE
           ═══════════════════════════════════════════════════ */}
-      <section ref={scene1Ref} className="relative w-full h-[350vh]">
+      <section ref={scene1Ref} style={{ position: "relative" }} className="relative w-full h-[350vh]">
         <div className="sticky top-0 w-full h-[100svh] overflow-hidden bg-deep-ink">
           
           <motion.div className="absolute inset-0 z-0" style={{ y: scene1ImageY }}>
             <PremiumImage
-              src="/images/collection-kitchen.jpg"
+              src="/images/collections/collection-kitchen.jpg"
               alt="Foshan Manufacturing"
               fill
               className="object-cover scale-110"
@@ -236,7 +236,7 @@ export default function OriginFilm() {
               <ScrollFade className="flex flex-col">
                 <div className="relative w-full aspect-[4/5] md:aspect-[3/2] overflow-hidden shadow-2xl ring-1 ring-white/5 mb-8">
                   <PremiumImage
-                    src="/images/gallery-3.jpg"
+                    src="/images/gallery/gallery-3.jpg"
                     alt="Factory Direct"
                     fill
                     className="object-cover"
@@ -255,7 +255,7 @@ export default function OriginFilm() {
               <ScrollFade className="flex flex-col">
                 <div className="relative w-full aspect-[4/5] md:aspect-[3/2] overflow-hidden shadow-2xl ring-1 ring-white/5 mb-8">
                   <PremiumImage
-                    src="/images/vignette-1.jpg"
+                    src="/images/vignettes/vignette-1.jpg"
                     alt="Curated Collection"
                     fill
                     className="object-cover"
@@ -274,7 +274,7 @@ export default function OriginFilm() {
               <ScrollFade className="flex flex-col">
                 <div className="relative w-full aspect-[4/5] md:aspect-[3/2] overflow-hidden shadow-2xl ring-1 ring-white/5 mb-8">
                   <PremiumImage
-                    src="/images/vignette-2.jpg"
+                    src="/images/vignettes/vignette-2.jpg"
                     alt="End To End"
                     fill
                     className="object-cover"
@@ -298,7 +298,7 @@ export default function OriginFilm() {
           SCENE 3 — THE VERTICAL JOURNEY
           Pure vertical scroll. Massive typography.
           ═══════════════════════════════════════════════════ */}
-      <section ref={journeyRef} className="relative w-full bg-deep-ink border-t border-gold/10 overflow-hidden">
+      <section ref={journeyRef} style={{ position: "relative" }} className="relative w-full bg-deep-ink border-t border-gold/10 overflow-hidden">
         
         {/* The Animated Golden Thread */}
         <div className="absolute left-6 md:left-[10%] top-0 bottom-0 w-px bg-white/5 z-0" />
@@ -331,19 +331,19 @@ export default function OriginFilm() {
                 step: "01",
                 title: "Sourcing.",
                 desc: "We identify and vet the finest factories across Foshan, Guangzhou, and Jieyang.",
-                img: "/images/hero-home.jpg"
+                img: "/images/hero/hero-home.jpg"
               },
               {
                 step: "02",
                 title: "Inspection.",
                 desc: "Rigorous physical multi-stage inspection at the factory before any padding or packaging is applied.",
-                img: "/images/vignette-1.jpg"
+                img: "/images/vignettes/vignette-1.jpg"
               },
               {
                 step: "03",
                 title: "Shipping.",
                 desc: "International freight, complete export documentation, and customs clearance handled entirely by us.",
-                img: "/images/vignette-2.jpg"
+                img: "/images/vignettes/vignette-2.jpg"
               }
             ].map((node, i) => (
               <ScrollFade key={i} className="pl-8 md:pl-[calc(10%+40px)] flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
@@ -390,7 +390,7 @@ export default function OriginFilm() {
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden border-t border-gold/10">
         <div className="absolute inset-0 z-0">
           <PremiumImage
-            src="/images/hero-home.jpg"
+            src="/images/hero/hero-home.jpg"
             alt="Casa Bliss Interior"
             fill
             className="object-cover opacity-60"

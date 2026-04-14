@@ -36,7 +36,7 @@ export default function ChapterIII_Showroom() {
 
       <div className="w-full md:w-[45%] h-[40vh] md:h-[80vh] relative order-1 md:order-2 mr-auto overflow-hidden">
         <PremiumImage 
-          src="/images/hero-home.jpg" 
+          src="/images/hero/hero-home.jpg" 
           alt="Foshan Showroom" 
           fill 
           sizes="(max-width: 768px) 100vw, 50vw"

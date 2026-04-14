@@ -34,7 +34,7 @@ export default function ProcessShell() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div ref={containerRef} className="relative w-full bg-deep-ink flex flex-col min-h-screen">
+    <div ref={containerRef} style={{ position: "relative" }} className="relative w-full bg-deep-ink flex flex-col min-h-screen">
         
         {/* Physical Absolute Passage Line - Bound to the content height */}
         <div className="absolute top-[100vh] bottom-[18vh] left-8 md:left-1/2 md:-translate-x-1/2 w-[2px] z-0 pointer-events-none mix-blend-screen">

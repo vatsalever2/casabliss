@@ -25,7 +25,7 @@ export default function GlobalPedigree() {
   const marqueeWords2 = ["Factory-Floor Control", "Zero Middlemen", "Global Standards", "Local Delivery", "Transparent Sourcing"];
 
   return (
-    <section ref={containerRef} className="py-24 md:py-32 overflow-hidden bg-deep-ink border-t border-gold/10 relative">
+    <section ref={containerRef} style={{ position: "relative" }} className="py-24 md:py-32 overflow-hidden bg-deep-ink border-t border-gold/10 relative">
       
       {/* Minimal Eyebrow */}
       <div className="max-w-7xl mx-auto px-6 mb-6 md:mb-10">

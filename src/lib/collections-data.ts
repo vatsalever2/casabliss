@@ -16,56 +16,56 @@ export const collections: Collection[] = [
     slug: "living-room",
     title: "Living Room",
     tagline: "Pieces that speak before you enter the room.",
-    image: "/images/collection-furniture.jpg",
+    image: "/images/collections/collection-furniture.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Living Room
     philosophy: "The living room is the architectural heart of the home. We curate expansive Italian leather seating and monolithic stone that command the space with quiet authority.",
     gallery: [
-      "/images/collection-furniture.jpg",
-      "/images/gallery-1.jpg",
-      "/images/gallery-2.jpg",
-      "/images/hero-home.jpg"
+      "/images/collections/collection-furniture.jpg",
+      "/images/vignettes/vignette-2.jpg",
+      "/images/vignettes/vignette-1.jpg",
+      "/images/hero/hero-home.jpg"
     ]
   },
   {
     slug: "bedroom",
     title: "Bedroom",
     tagline: "Where the day ends and quality begins.",
-    image: "/images/collection-bedroom-v2.jpg",
+    image: "/images/collections/collection-bedroom-v2.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Bedroom
     philosophy: "The bedroom demands absolute silence. We architect master suites around European tailoring and textiles that transform the room into a sanctuary of restorative luxury.",
     gallery: [
-      "/images/collection-bedroom-v2.jpg",
-      "/images/gallery-3.jpg",
-      "/images/gallery-1.jpg",
-      "/images/service-1.jpg"
+      "/images/collections/collection-bedroom-v2.jpg",
+      "/images/collections/bedroom_2.jpg",
+      "/images/collections/bedroom_3.jpg",
+      "/images/collections/bedroom_4.jpg"
     ]
   },
   {
     slug: "dining",
     title: "Dining",
     tagline: "Tables that turn a meal into an occasion.",
-    image: "/images/collection-dining.jpg",
+    image: "/images/collections/collection-dining.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Dining
     philosophy: "Dining is an occasion of communion. We source sculptural slabs of sintered stone that serve as monumental centerpieces built to last for generations.",
     gallery: [
-      "/images/collection-dining.jpg",
-      "/images/gallery-2.jpg",
-      "/images/gallery-3.jpg",
-      "/images/service-2.jpg"
+      "/images/process/service-3.jpg",
+      "/images/collections/dining_2.jpg",
+      "/images/gallery/gallery-3.jpg",
+      "/images/collections/collection-kitchen.jpg"
     ]
   },
   {
     slug: "storage-decor",
     title: "Storage & Decor",
     tagline: "Architecture for your objects.",
-    image: "/images/collection-storage.jpg",
+    image: "/images/collections/collection-storage.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Storage & Decor
     philosophy: "True luxury is the absence of visual noise. Our monolithic systems disappear into your architecture, whilst our decor is curated to shape light and space.",
     gallery: [
-      "/images/collection-storage.jpg",
-      "/images/gallery-1.jpg",
-      "/images/gallery-2.jpg",
-      "/images/service-3.jpg"
+      "/images/collections/collection-storage.jpg",
+      "/images/collections/storage_decor_2.jpg",
+      "/images/collections/storage_decor_3.jpg",
+      "/images/collections/storage_decor_4.jpg"
     ]
   },
 ];

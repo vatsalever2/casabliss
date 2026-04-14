@@ -19,7 +19,7 @@ export default function InquirePage() {
       <div className="relative w-full md:w-[45%] h-[55vh] md:h-screen sticky top-0 overflow-hidden shrink-0">
         <CurtainReveal>
           <Image
-            src="/images/about-sourcing.jpg"
+            src="/images/about/about-sourcing.jpg"
             alt="Casa Bliss Sourcing Atelier"
             fill
             sizes="(max-width: 768px) 100vw, 45vw"

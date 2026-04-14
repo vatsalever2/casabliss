@@ -40,9 +40,9 @@ export default function HomePage() {
   const scrollX = useTransform(scrollerProgress, [0, 1], ["0%", "-75%"]);
 
   const heroImages = [
-    "/images/hero-home.jpg",
-    "/images/collection-furniture.jpg",
-    "/images/collection-kitchen.jpg",
+    "/images/hero/hero-home.jpg",
+    "/images/collections/collection-furniture.jpg",
+    "/images/collections/collection-kitchen.jpg",
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -91,9 +91,9 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mb-8"
+            className="hidden"
           >
-            <span className="text-gold/80 text-xs md:text-sm tracking-[0.3em] uppercase font-sans invisible select-none">
+            <span className="text-gold/80 text-xs md:text-sm tracking-[0.3em] uppercase font-sans">
               Welcome to
             </span>
           </motion.div>
@@ -102,15 +102,14 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mb-10"
           >
             <h1 className="sr-only">Casa Bliss</h1>
             <PremiumImage
-              src="/images/casabliss_name-removebg.png"
+              src="/images/logos/casabliss_name-removebg.png"
               alt="Casa Bliss"
               width={800}
               height={200}
-              className="w-[320px] sm:w-[400px] md:w-[560px] lg:w-[700px] h-auto object-contain brightness-0 invert"
+              className="w-[240px] sm:w-[320px] md:w-[460px] lg:w-[560px] h-auto object-contain brightness-0 invert"
               priority
             />
           </motion.div>
@@ -119,14 +118,14 @@ export default function HomePage() {
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 1.5, delay: 0.8 }}
-            className="w-16 h-px bg-gold/50 mb-10"
+            className="hidden w-16 h-px bg-gold/50 mb-10"
           />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed invisible select-none"
+            className="hidden text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed"
           >
             Curated luxury living. <br className="md:hidden" />
             Sourced from the world&apos;s most <i className="italic font-light text-gold/90">exclusive</i> factories.
@@ -193,7 +192,7 @@ export default function HomePage() {
               style={{ y: y1 }}
             >
               <div className="absolute inset-0 bg-deep-ink/10 z-10 pointer-events-none" />
-              <PremiumImage src="/images/vignette-1.jpg" alt="Luxury detail" fill className="object-cover opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
+              <PremiumImage src="/images/vignettes/vignette-1.jpg" alt="Luxury detail" fill className="object-cover opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
             </motion.div>
 
             {/* Offset Floating Image */}
@@ -202,7 +201,7 @@ export default function HomePage() {
               style={{ y: y2 }}
             >
               <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply z-10 pointer-events-none" />
-              <PremiumImage src="/images/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
+              <PremiumImage src="/images/vignettes/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
             </motion.div>
           </div>
 
@@ -244,7 +243,7 @@ export default function HomePage() {
         </div>
 
         {/* UNIFIED HORIZONTAL SCROLL LAYOUT */}
-        <div ref={scrollerRef} className="h-[400vh] w-full relative">
+        <div ref={scrollerRef} style={{ position: "relative" }} className="h-[400vh] w-full relative">
           <div className="sticky top-0 h-[100svh] w-full flex items-center overflow-hidden bg-deep-ink">
             <motion.div style={{ x: scrollX }} className="flex w-[400vw] h-full items-center">
               {collections.map((collection, index) => (
@@ -313,7 +312,7 @@ export default function HomePage() {
         {/* Background Layer */}
         <div className="absolute inset-0 z-0">
           <PremiumImage
-            src="/images/vignette-2.jpg"
+            src="/images/vignettes/vignette-2.jpg"
             alt="Casa Bliss Luxury Sourcing"
             fill
             className="object-cover object-center translate-y-[-10%] scale-105"

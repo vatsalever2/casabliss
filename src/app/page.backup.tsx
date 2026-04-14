@@ -32,9 +32,9 @@ export default function HomePage() {
   const y2 = useTransform(philosophyScrollY, [0, 1], ["15%", "-15%"]);
 
   const heroImages = [
-    "/images/hero-home.jpg",
-    "/images/collection-furniture.jpg",
-    "/images/collection-kitchen.jpg",
+    "/images/hero/hero-home.jpg",
+    "/images/collections/collection-furniture.jpg",
+    "/images/collections/collection-kitchen.jpg",
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -175,7 +175,7 @@ export default function HomePage() {
                style={{ y: y1 }}
              >
                 <div className="absolute inset-0 bg-deep-ink/10 z-10 pointer-events-none" />
-                <PremiumImage src="/images/vignette-1.jpg" alt="Luxury detail" fill className="object-cover opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
+                <PremiumImage src="/images/vignettes/vignette-1.jpg" alt="Luxury detail" fill className="object-cover opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
              </motion.div>
              
              {/* Offset Floating Image */}
@@ -184,7 +184,7 @@ export default function HomePage() {
                style={{ y: y2 }}
              >
                 <div className="absolute inset-0 bg-deep-ink/20 mix-blend-multiply z-10 pointer-events-none" />
-                <PremiumImage src="/images/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
+                <PremiumImage src="/images/vignettes/vignette-3.jpg" alt="Material texture" fill className="object-cover grayscale-[30%] opacity-90 mix-blend-luminosity" sizes="(max-width: 768px) 50vw, 25vw" />
              </motion.div>
           </div>
           
@@ -297,7 +297,7 @@ export default function HomePage() {
         {/* Background Layer */}
         <div className="absolute inset-0 z-0">
           <PremiumImage 
-            src="/images/vignette-2.jpg" 
+            src="/images/vignettes/vignette-2.jpg" 
             alt="Casa Bliss Luxury Sourcing" 
             fill 
             className="object-cover object-center translate-y-[-10%] scale-105" 

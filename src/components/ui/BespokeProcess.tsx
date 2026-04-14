@@ -12,19 +12,19 @@ const steps = [
     id: "01",
     title: "The Briefing",
     description: "Aligning spatial vision. We establish constraints before logistics commence.",
-    image: "/images/service-1.jpg"
+    image: "/images/process/service-1.jpg"
   },
   {
     id: "02",
     title: "The Excursion",
     description: "We handle travel while you curate directly from Foshan's premier factory floors.",
-    image: "/images/service-2.jpg"
+    image: "/images/process/service-2.jpg"
   },
   {
     id: "03",
     title: "The Handover",
     description: "Complete customs clearance to white-glove assembly in your property.",
-    image: "/images/service-3.jpg"
+    image: "/images/process/service-3.jpg"
   }
 ];
 

@@ -51,15 +51,15 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="relative z-10">
             <motion.div
-              animate={{ height: scrolled ? 56 : 80 }}
+              animate={{ height: scrolled ? 40 : 56 }}
               transition={{ duration: 0.3 }}
               className="relative flex items-center"
             >
               <Image
-                src="/images/casabliss_logo_onlyCB-removebg.png"
+                src="/images/logos/casabliss_logo_onlyCB-removebg.png"
                 alt="Casa Bliss"
-                width={88}
-                height={88}
+                width={64}
+                height={64}
                 className="w-auto h-full object-contain object-left"
                 style={{ width: "auto", height: "100%" }}
                 priority
@@ -85,12 +85,12 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-10 w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+            className="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5 -mr-2"
             aria-label="Toggle menu"
           >
             <motion.span
               className="block w-6 h-px bg-off-white origin-center"
-              animate={menuOpen ? { rotate: 45, y: 4.5 } : { rotate: 0, y: 0 }}
+              animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
@@ -100,7 +100,7 @@ export default function Navbar() {
             />
             <motion.span
               className="block w-6 h-px bg-off-white origin-center"
-              animate={menuOpen ? { rotate: -45, y: -4.5 } : { rotate: 0, y: 0 }}
+              animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.3 }}
             />
           </button>

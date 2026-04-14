@@ -15,7 +15,7 @@ export default function ChapterVI_Handover() {
     >
       <div className="w-full md:w-[45%] h-[40vh] md:h-[80vh] relative order-1 md:order-1 mr-auto overflow-hidden">
         <PremiumImage 
-          src="/images/gallery-3.jpg" 
+          src="/images/gallery/gallery-3.jpg" 
           alt="Handover" 
           fill 
           sizes="(max-width: 768px) 100vw, 50vw"

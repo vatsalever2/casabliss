@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/images/casabliss_logo_onlyCB-removebg.png"
+              src="/images/logos/casabliss_logo_onlyCB-removebg.png"
               alt="Casa Bliss"
               width={96}
               height={96}

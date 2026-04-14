@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Casa Bliss",
     images: [
       {
-        url: "/images/hero-home.jpg",
+        url: "/images/hero/hero-home.jpg",
         width: 1200,
         height: 630,
         alt: "Casa Bliss Luxury Interior",
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     title: "Casa Bliss — Luxury Furniture Sourced from China",
     description:
       "Premium furniture, kitchen systems, faucets, and lighting — curated from China's finest factories.",
-    images: ["/images/hero-home.jpg"],
+    images: ["/images/hero/hero-home.jpg"],
   },
   icons: {
-    icon: "/images/logo_black-bg.jpg",
+    icon: "/images/logos/logo_black-bg.jpg",
   },
 };
 
