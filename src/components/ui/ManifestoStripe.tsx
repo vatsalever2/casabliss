@@ -23,8 +23,7 @@ export default function ManifestoStripe() {
           transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-cream/90 text-xl md:text-2xl lg:text-3xl font-light tracking-wide leading-relaxed"
         >
-          Transforming spaces through uncompromising luxury. <br className="hidden md:block" />
-          We bridge the gap between master artisans and extraordinary homes.
+          Curating the finest craftsmanship from Italy and China to elevate your extraordinary home.
         </motion.p>
       </div>
     </section>

@@ -23,7 +23,7 @@ export default function ChapterV_Shipment() {
         <div className="flex gap-10 md:gap-12 text-left md:text-right">
            <div className="flex flex-col items-start md:items-end">
              <span className="text-display text-3xl md:text-4xl text-off-white">8-12</span>
-             <span className="text-eyebrow text-gold/60 text-[10px] mt-1 text-left md:text-right w-full">Months Transit</span>
+             <span className="text-eyebrow text-gold/60 text-[10px] mt-1 text-left md:text-right w-full">Weeks Transit</span>
            </div>
         </div>
       </div>
