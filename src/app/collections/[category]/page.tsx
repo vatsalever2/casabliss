@@ -44,7 +44,7 @@ export default async function CategoryPage({ params }: PageProps) {
     collection.gallery.map(async (img, i) => ({
       src: img,
       alt: `${collection.title} Space ${i + 1}`,
-      blurDataURL: await getLocalImageBlur(img),
+      blurDataURL: (await getLocalImageBlur(img)) ?? "",
     })),
   );
 
