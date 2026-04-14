@@ -9,12 +9,12 @@ export default function Footer() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/images/casabliss_logo.png"
+              src="/images/casabliss_logo_onlyCB-removebg.png"
               alt="Casa Bliss"
-              width={160}
-              height={80}
-              className="w-auto h-20 object-contain"
-              style={{ width: "auto", height: "80px" }}
+              width={96}
+              height={96}
+              className="w-auto h-16 object-contain"
+              style={{ width: "auto", height: "64px" }}
             />
           </Link>
 

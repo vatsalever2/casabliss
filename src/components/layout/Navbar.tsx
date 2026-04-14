@@ -56,10 +56,10 @@ export default function Navbar() {
               className="relative flex items-center"
             >
               <Image
-                src="/images/casabliss_logo.png"
+                src="/images/casabliss_logo_onlyCB-removebg.png"
                 alt="Casa Bliss"
-                width={160}
-                height={80}
+                width={88}
+                height={88}
                 className="w-auto h-full object-contain object-left"
                 style={{ width: "auto", height: "100%" }}
                 priority
