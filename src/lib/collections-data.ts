@@ -55,12 +55,12 @@ export const collections: Collection[] = [
     ]
   },
   {
-    slug: "storage-decor",
-    title: "Storage & Decor",
-    tagline: "Architecture for your objects.",
+    slug: "modular-kitchen-wardrobes",
+    title: "Modular Kitchen & Wardrobes",
+    tagline: "Precision-crafted spaces for how you live.",
     image: "/images/collections/collection-storage.jpg",
-    catalogueUrl: "#", // Replace with Google Drive link for Storage & Decor
-    philosophy: "True luxury is the absence of visual noise. Our monolithic systems disappear into your architecture, whilst our decor is curated to shape light and space.",
+    catalogueUrl: "#", // Replace with Google Drive link for Modular Kitchen & Wardrobes
+    philosophy: "A kitchen and wardrobe are not mere storage — they are the operational core of a refined home. We engineer modular systems with German-grade precision, marrying aesthetic coherence with flawless functionality.",
     gallery: [
       "/images/collections/collection-storage.jpg",
       "/images/collections/storage_decor_2.jpg",
@@ -104,9 +104,9 @@ export const masterCatalogues: Catalogue[] = [
     driveUrl: "#", 
   },
   {
-    id: "storage-decor-manifesto",
-    title: "Storage & Decor Manifesto",
-    category: "Storage & Decor",
+    id: "modular-kitchen-wardrobes-catalogue",
+    title: "Modular Kitchen & Wardrobes Catalogue",
+    category: "Modular Kitchen & Wardrobes",
     driveUrl: "#", 
   }
 ];
