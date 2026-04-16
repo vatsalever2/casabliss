@@ -347,7 +347,7 @@ export default function HomePage() {
                   className="group relative inline-flex items-center justify-center border border-gold/40 bg-gold/5 px-10 py-5 md:px-12 md:py-6 text-sm uppercase tracking-[0.25em] font-sans text-off-white hover:bg-gold hover:text-deep-ink hover:border-gold transition-all duration-500 overflow-hidden w-full md:w-auto"
                 >
                   <span className="relative z-10 flex items-center gap-4">
-                    <span>Begin Consultation</span>
+                    <span>Begin Journey</span>
                     <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </span>
                 </Link>

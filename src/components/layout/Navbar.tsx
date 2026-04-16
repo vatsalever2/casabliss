@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Magnetic from "@/components/ui/Magnetic";
 
@@ -16,6 +17,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -49,7 +52,9 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
           {/* Logo */}
-          <Link href="/" className="relative z-10">
+          <Link href="/" className={`relative z-10 transition-opacity duration-[1500ms] ease-in-out ${
+            isHomePage && !scrolled ? "opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto" : "opacity-100"
+          }`}>
             <motion.div
               animate={{ height: scrolled ? 40 : 56 }}
               transition={{ duration: 0.3 }}

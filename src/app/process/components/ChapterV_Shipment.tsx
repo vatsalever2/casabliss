@@ -14,7 +14,7 @@ export default function ChapterV_Shipment() {
       <div className="w-full md:w-[45%] flex flex-col text-left md:text-right items-start md:items-end order-2 md:order-1 ml-auto">
         <span className="text-gold font-serif text-3xl mb-6 block italic opacity-80">V.</span>
         <h2 className="text-display text-4xl md:text-6xl text-off-white leading-tight mb-6 md:mb-8">
-          From Foshan to <br className="hidden md:block"/><i className="italic font-light text-gold/90">your foyer.</i>
+          Where elite craftsmanship <br className="hidden md:block"/>meets unmatched scale, <br className="hidden md:block"/>delivered to <i className="italic font-light text-gold/90">your foyer.</i>
         </h2>
         <p className="text-sans text-cream/60 text-[15px] md:text-lg leading-relaxed max-w-sm mb-10 md:mb-12">
           The logistical chain is absolute. We handle 100% customs clearance from factory floor to your shores. Securely crated, meticulously insured, and tracked until it arrives perfectly at your property.
@@ -45,9 +45,12 @@ export default function ChapterV_Shipment() {
           <div className="flex justify-between items-start relative z-10">
             <div className="flex flex-col gap-1">
               <span className="text-[9px] uppercase tracking-[0.3em] text-gold/50 font-sans">Origin</span>
-              <span className="text-base md:text-xl font-serif italic text-off-white">Foshan, CN</span>
+              <span className="text-base md:text-xl font-serif italic text-off-white">Master Factories</span>
             </div>
-            <span className="text-[9px] font-mono tracking-widest text-gold/30">23.02&deg;N 113.12&deg;E</span>
+            <div className="flex flex-col text-right">
+              <span className="text-[9px] font-mono tracking-widest text-gold/30">END-TO-END</span>
+              <span className="text-[9px] font-mono tracking-widest text-gold/30">SUPPLY CHAIN</span>
+            </div>
           </div>
           
           <div className="w-full h-px bg-gold/10 relative my-4 z-10 flex items-center">
