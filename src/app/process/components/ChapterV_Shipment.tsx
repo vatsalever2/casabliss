@@ -13,11 +13,11 @@ export default function ChapterV_Shipment() {
     >
       <div className="w-full md:w-[45%] flex flex-col text-left md:text-right items-start md:items-end order-2 md:order-1 ml-auto">
         <span className="text-gold font-serif text-3xl mb-6 block italic opacity-80">V.</span>
-        <h2 className="text-display text-4xl md:text-6xl text-off-white leading-tight mb-6 md:mb-8">
-          Where elite craftsmanship <br className="hidden md:block"/>meets unmatched scale, <br className="hidden md:block"/>delivered to <i className="italic font-light text-gold/90">your foyer.</i>
+        <h2 className="text-display text-4xl md:text-6xl text-off-white leading-tight mb-6 md:mb-8 mt-2">
+          Global scale. <br className="hidden md:block"/>Flawless <i className="italic font-light text-gold/90">delivery.</i>
         </h2>
         <p className="text-sans text-cream/60 text-[15px] md:text-lg leading-relaxed max-w-sm mb-10 md:mb-12">
-          The logistical chain is absolute. We handle 100% customs clearance from factory floor to your shores. Securely crated, meticulously insured, and tracked until it arrives perfectly at your property.
+          End-to-end logistics. Fully insured, seamlessly tracked, and cleared to your estate.
         </p>
 
         <div className="flex gap-10 md:gap-12 text-left md:text-right">
