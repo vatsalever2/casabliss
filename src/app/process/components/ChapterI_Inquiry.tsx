@@ -28,8 +28,10 @@ function TypewriterCycle() {
     } else if (deleting && displayed.length > 0) {
       timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 35);
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setIndex((i) => (i + 1) % SPACES.length);
+      timeout = setTimeout(() => {
+        setDeleting(false);
+        setIndex((i) => (i + 1) % SPACES.length);
+      }, 0);
     }
     return () => clearTimeout(timeout);
   }, [displayed, deleting, index]);

@@ -30,7 +30,7 @@ export default function ChapterVI_Handover() {
           The last thing we do <br className="hidden md:block"/>is leave it <i className="italic font-light text-gold/90">perfect.</i>
         </h2>
         <p className="text-sans text-cream/60 text-[15px] md:text-lg leading-relaxed max-w-sm mb-10 md:mb-12">
-          Our team coordinates placement and full assembly. You don't lift a finger. When we leave, every piece is exactly where it belongs. That is the end of the passage. And the beginning of your home.
+          Our team coordinates placement and full assembly. You don&apos;t lift a finger. When we leave, every piece is exactly where it belongs. That is the end of the passage. And the beginning of your home.
         </p>
 
         <Link

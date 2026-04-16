@@ -71,11 +71,12 @@ function CustomSelect({
         role="combobox"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
+        aria-controls="custom-select-listbox"
         tabIndex={disabled ? -1 : 0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            !disabled && onToggle();
+            if (!disabled) onToggle();
           }
         }}
       >

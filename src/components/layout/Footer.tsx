@@ -8,13 +8,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/">
-            <Image
+            <img
               src="/images/logos/casabliss_logo_onlyCB-removebg.png"
               alt="Casa Bliss"
-              width={96}
-              height={96}
               className="w-auto h-16 object-contain"
-              style={{ width: "auto", height: "64px" }}
             />
           </Link>
 

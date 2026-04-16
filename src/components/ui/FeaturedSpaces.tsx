@@ -2,7 +2,6 @@
 
 import PremiumImage from "./PremiumImage";
 import SectionReveal from "./SectionReveal";
-import CurtainReveal from "./CurtainReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

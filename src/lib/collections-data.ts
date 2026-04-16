@@ -58,14 +58,14 @@ export const collections: Collection[] = [
     slug: "modular-kitchen-wardrobes",
     title: "Modular Kitchen & Wardrobes",
     tagline: "Precision-crafted spaces for how you live.",
-    image: "/images/collections/collection-storage.jpg",
+    image: "/images/collections/kitchen-1.jpg",
     catalogueUrl: "#", // Replace with Google Drive link for Modular Kitchen & Wardrobes
     philosophy: "A kitchen and wardrobe are not mere storage — they are the operational core of a refined home. We engineer modular systems with German-grade precision, marrying aesthetic coherence with flawless functionality.",
     gallery: [
-      "/images/collections/collection-storage.jpg",
-      "/images/collections/storage_decor_2.jpg",
+      "/images/collections/kitchen-1.jpg",
+      "/images/collections/kitchen-2.jpg",
       "/images/collections/storage_decor_3.jpg",
-      "/images/collections/storage_decor_4.jpg"
+      "/images/collections/storage_decor_2.jpg"
     ]
   },
 ];

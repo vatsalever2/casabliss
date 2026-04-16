@@ -6,7 +6,6 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import SectionReveal from "@/components/ui/SectionReveal";
 import Magnetic from "@/components/ui/Magnetic";
-import CurtainReveal from "@/components/ui/CurtainReveal";
 import ManifestoStripe from "@/components/ui/ManifestoStripe";
 import GlobalPedigree from "@/components/ui/GlobalPedigree";
 import FeaturedSpaces from "@/components/ui/FeaturedSpaces";

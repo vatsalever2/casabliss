@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import SectionReveal from "@/components/ui/SectionReveal";
-import Magnetic from "@/components/ui/Magnetic";
 
 export const metadata: Metadata = {
   title: "Process",

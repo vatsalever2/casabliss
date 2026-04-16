@@ -60,15 +60,10 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className="relative flex items-center"
             >
-              <Image
+              <img
                 src="/images/logos/casabliss_logo_onlyCB-removebg.png"
                 alt="Casa Bliss"
-                width={64}
-                height={64}
                 className="w-auto h-full object-contain object-left"
-                style={{ width: "auto", height: "100%" }}
-                priority
-                loading="eager"
               />
             </motion.div>
           </Link>

@@ -45,8 +45,19 @@ export default function CollectionsAccordion({ collections }: { collections: Col
             />
             
             {/* Overlay Gradient */}
-            <div className={`absolute inset-0 transition-colors duration-500 ${isActive ? 'bg-gradient-to-t from-deep-ink/90 via-deep-ink/20 to-transparent' : 'bg-black/60 group-hover:bg-black/40'}`} />
+            <div className={`absolute inset-0 transition-colors duration-500 ${isActive ? 'bg-black/30' : 'bg-black/60 group-hover:bg-black/40'}`} />
             
+            {/* Smooth Text Backdrop Gradient */}
+            {isActive && (
+              <motion.div 
+                 initial={{ opacity: 0 }} 
+                 animate={{ opacity: 1 }} 
+                 exit={{ opacity: 0 }} 
+                 transition={{ duration: 0.5 }}
+                 className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" 
+              />
+            )}
+
             {/* Content Container */}
             <div className="absolute inset-0 flex flex-col justify-end">
               <AnimatePresence mode="popLayout">
@@ -57,12 +68,12 @@ export default function CollectionsAccordion({ collections }: { collections: Col
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10, transition: { duration: 0.2 } }}
                     transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                    className="p-6 md:p-12 lg:p-16 flex flex-col w-full h-full justify-end"
+                    className="relative z-10 p-6 md:p-12 lg:p-16 flex flex-col w-full h-full justify-end"
                   >
                     <span className="text-gold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-4 md:mb-6 font-sans">
                       0{index + 1}
                     </span>
-                    <h2 className="text-display font-light text-4xl md:text-6xl lg:text-8xl text-off-white leading-none mb-4 md:mb-6 drop-shadow-xl">
+                    <h2 className="text-display font-light text-4xl md:text-6xl lg:text-8xl text-off-white leading-none mb-4 md:mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
                       {category.title}.
                     </h2>
                     <p className="text-cream/70 font-light text-sm md:text-base max-w-md mb-8 md:mb-10 hidden md:block leading-relaxed">

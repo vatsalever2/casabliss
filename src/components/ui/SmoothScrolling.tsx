@@ -19,9 +19,10 @@ export default function SmoothScrolling({ children }: { children: ReactNode }) {
       autoResize: true,
     });
 
+    interface LenisWindow extends Window { lenis?: Lenis }
     setTimeout(() => {
       setLenisInstance(lenis);
-      (window as any).lenis = lenis;
+      (window as LenisWindow).lenis = lenis;
     }, 0);
 
     function raf(time: number) {

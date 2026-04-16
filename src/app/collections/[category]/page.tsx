@@ -4,8 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { collections, getCollection } from "@/lib/collections-data";
 import SectionReveal from "@/components/ui/SectionReveal";
-import CurtainReveal from "@/components/ui/CurtainReveal";
-import CatalogDownloadTray from "@/components/ui/CatalogDownloadTray";
+
 import PremiumImage from "@/components/ui/PremiumImage";
 import CollectionGallery from "@/components/ui/CollectionGallery";
 import { getLocalImageBlur } from "@/lib/getImageBlur";
