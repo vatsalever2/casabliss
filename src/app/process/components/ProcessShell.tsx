@@ -18,8 +18,7 @@ export default function ProcessShell() {
   });
 
   useEffect(() => {
-    interface LenisWindow extends Window { lenis?: { options?: { duration: number } } }
-    const w = window as LenisWindow;
+    const w = window as unknown as { lenis?: { options?: { duration: number } } };
     let oldDuration = 1.5;
     if (w.lenis && w.lenis.options) {
       oldDuration = w.lenis.options.duration;
