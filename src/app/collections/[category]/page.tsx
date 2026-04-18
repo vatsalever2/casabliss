@@ -6,7 +6,7 @@ import { collections, getCollection } from "@/lib/collections-data";
 import SectionReveal from "@/components/ui/SectionReveal";
 
 import PremiumImage from "@/components/ui/PremiumImage";
-import CollectionGallery from "@/components/ui/CollectionGallery";
+import SubcategoryGrid from "@/components/ui/SubcategoryGrid";
 import { getLocalImageBlur } from "@/lib/getImageBlur";
 
 interface PageProps {
@@ -38,14 +38,6 @@ export default async function CategoryPage({ params }: PageProps) {
 
   // Pre-generate the 10-byte blurry Base64 placeholder for the main hero image
   const collectionHeroBlur = await getLocalImageBlur(collection.image);
-
-  const galleryItems = await Promise.all(
-    collection.gallery.map(async (img, i) => ({
-      src: img,
-      alt: `${collection.title} Space ${i + 1}`,
-      blurDataURL: (await getLocalImageBlur(img)) ?? "",
-    })),
-  );
 
   return (
     <div className="relative w-full bg-soft-black">
@@ -156,49 +148,11 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Act III: The Gallery Array */}
-      <CollectionGallery collectionTitle={collection.title} items={galleryItems} />
-
-      {/* Act IV: The Catalogues */}
-      <section className="w-full bg-soft-black relative overflow-hidden flex flex-col items-center py-20 px-6">
-        <SectionReveal>
-          {/* Refined, minimal elegant card */}
-          <div className="relative z-10 w-full max-w-5xl mx-auto border border-white/5 bg-deep-ink p-10 md:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-10">
-             
-             <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent pointer-events-none" />
-
-             {/* Text Block */}
-             <div className="flex flex-col items-center md:items-start max-w-lg relative z-20">
-               <div className="w-12 h-px bg-gold/30 mb-4 hidden md:block" />
-               <p className="text-[10px] md:text-xs text-gold/80 uppercase tracking-[0.4em] font-sans mb-3 md:mb-4">
-                 Access The Archives
-               </p>
-               <h2 className="text-display font-light text-4xl md:text-5xl text-off-white mb-4 leading-tight tracking-tight">
-                 {collection.title} Catalogue.
-               </h2>
-               <p className="text-cream/50 font-light leading-relaxed text-sm md:text-base tracking-wide text-balance">
-                 Review pristine dimensions, architectural material finishes, and global freight parameters direct from the factory floor.
-               </p>
-             </div>
-
-             {/* Minimal Download Button */}
-             <div className="flex-shrink-0 relative z-20">
-                <a 
-                  href={collection.catalogueUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center border border-gold/30 bg-gold/5 px-8 md:px-10 py-4 md:py-5 text-[10px] md:text-xs uppercase tracking-[0.25em] font-sans text-off-white hover:bg-gold hover:text-deep-ink hover:border-gold transition-all duration-500"
-                >
-                  <span className="relative z-10 flex items-center gap-4">
-                    <span>View Catalogue</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                  </span>
-                </a>
-             </div>
-             
-          </div>
-        </SectionReveal>
-      </section>
+      {/* Act III: Subcategories Showcase */}
+      <SubcategoryGrid 
+        collectionTitle={collection.title} 
+        subcategories={collection.subcategories} 
+      />
 
       {/* Bottom Navigation */}
       <section className="w-full bg-soft-black py-16 flex justify-center">

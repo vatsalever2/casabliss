@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Magnetic from "@/components/ui/Magnetic";
@@ -60,6 +59,7 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className="relative flex items-center"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logos/casabliss_logo_onlyCB-removebg.png"
                 alt="Casa Bliss"

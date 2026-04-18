@@ -1,3 +1,11 @@
+export interface Subcategory {
+  id: string;
+  title: string;
+  tagline: string;
+  catalogueUrl: string;
+  images: string[];
+}
+
 export interface Collection {
   slug: string;
   title: string;
@@ -6,6 +14,7 @@ export interface Collection {
   catalogueUrl: string;
   philosophy: string;
   gallery: string[];
+  subcategories: Subcategory[];
 }
 
 // Master catalogue link (all categories combined)
@@ -24,6 +33,56 @@ export const collections: Collection[] = [
       "/images/vignettes/vignette-2.jpg",
       "/images/vignettes/vignette-1.jpg",
       "/images/hero/hero-home.jpg"
+    ],
+    subcategories: [
+      {
+        id: "living-room-sofas",
+        title: "Sofas & Seating",
+        tagline: "Architectural comfort designed for lingering.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/collection-furniture.jpg",
+          "/images/vignettes/vignette-1.jpg",
+          "/images/gallery/gallery-1.jpg",
+          "/images/vignettes/vignette-3.jpg",
+        ],
+      },
+      {
+        id: "living-room-coffee-tables",
+        title: "Coffee & Side Tables",
+        tagline: "Sculptural forms in stone, glass, and metal.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/storage_decor_3.jpg",
+          "/images/vignettes/vignette-2.jpg",
+          "/images/gallery/gallery-2.jpg",
+          "/images/collections/collection-lighting.jpg",
+        ],
+      },
+      {
+        id: "living-room-tv-units",
+        title: "Media Architecture",
+        tagline: "Seamless integration of technology and design.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/storage_decor_2.jpg",
+          "/images/vignettes/vignette-2.jpg",
+          "/images/collections/collection-storage.jpg",
+          "/images/gallery/gallery-3.jpg",
+        ],
+      },
+      {
+        id: "living-room-decor",
+        title: "Accent & Decor",
+        tagline: "The final layer of curated sophistication.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/storage_decor_4.jpg",
+          "/images/collections/collection-lighting.jpg",
+          "/images/vignettes/vignette-1.jpg",
+          "/images/hero/hero-home.jpg",
+        ],
+      },
     ]
   },
   {
@@ -38,6 +97,56 @@ export const collections: Collection[] = [
       "/images/collections/bedroom_2.jpg",
       "/images/collections/bedroom_3.jpg",
       "/images/collections/bedroom_4.jpg"
+    ],
+    subcategories: [
+      {
+        id: "bedroom-beds",
+        title: "Beds & Headboards",
+        tagline: "The sanctuary's centerpoint.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/collection-bedroom-v2.jpg",
+          "/images/collections/bedroom_4.jpg",
+          "/images/collections/bedroom_3.jpg",
+          "/images/vignettes/vignette-1.jpg",
+        ],
+      },
+      {
+        id: "bedroom-wardrobes",
+        title: "Wardrobes & Storage",
+        tagline: "Concealed organization with tailored finishes.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/bedroom_2.jpg",
+          "/images/collections/storage_decor_2.jpg",
+          "/images/collections/collection-storage.jpg",
+          "/images/collections/storage_decor_3.jpg",
+        ],
+      },
+      {
+        id: "bedroom-dressing",
+        title: "Dressing Tables",
+        tagline: "Intimate spaces for preparation and reflection.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/bedroom_3.jpg",
+          "/images/collections/storage_decor_4.jpg",
+          "/images/collections/bedroom_2.jpg",
+          "/images/vignettes/vignette-3.jpg",
+        ],
+      },
+      {
+        id: "bedroom-nightstands",
+        title: "Nightstands",
+        tagline: "Quiet companions of functional luxury.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/bedroom_2.jpg",
+          "/images/collections/collection-lighting.jpg",
+          "/images/collections/bedroom_4.jpg",
+          "/images/gallery/gallery-1.jpg",
+        ],
+      },
     ]
   },
   {
@@ -52,6 +161,56 @@ export const collections: Collection[] = [
       "/images/collections/dining_2.jpg",
       "/images/gallery/gallery-3.jpg",
       "/images/collections/collection-kitchen.jpg"
+    ],
+    subcategories: [
+      {
+        id: "dining-tables",
+        title: "Dining Tables",
+        tagline: "Monolithic slabs forged for gathering.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/collection-dining.jpg",
+          "/images/collections/dining_2.jpg",
+          "/images/process/service-3.jpg",
+          "/images/gallery/gallery-3.jpg",
+        ],
+      },
+      {
+        id: "dining-chairs",
+        title: "Dining Chairs",
+        tagline: "Ergonomic support draped in fine materials.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/dining_2.jpg",
+          "/images/process/service-3.jpg",
+          "/images/collections/collection-dining.jpg",
+          "/images/process/service-1.jpg",
+        ],
+      },
+      {
+        id: "dining-sideboards",
+        title: "Sideboards & Buffets",
+        tagline: "Architectural storage for fine diningware.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/storage_decor_3.jpg",
+          "/images/collections/storage_decor_2.jpg",
+          "/images/collections/storage_decor_4.jpg",
+          "/images/collections/collection-storage.jpg",
+        ],
+      },
+      {
+        id: "dining-bar-units",
+        title: "Bar Units & Display",
+        tagline: "Elevated stages for curation and hosting.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/collection-kitchen.jpg",
+          "/images/collections/dining_2.jpg",
+          "/images/collections/collection-faucets.jpg",
+          "/images/gallery/gallery-2.jpg",
+        ],
+      },
     ]
   },
   {
@@ -66,6 +225,56 @@ export const collections: Collection[] = [
       "/images/collections/kitchen-2.jpg",
       "/images/collections/storage_decor_3.jpg",
       "/images/collections/storage_decor_2.jpg"
+    ],
+    subcategories: [
+      {
+        id: "modular-kitchens",
+        title: "Modular Kitchens",
+        tagline: "Precision-engineered culinary environments.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/kitchen-1.jpg",
+          "/images/collections/kitchen-2.jpg",
+          "/images/collections/collection-kitchen.jpg",
+          "/images/process/service-2.jpg",
+        ],
+      },
+      {
+        id: "wardrobe-systems",
+        title: "Walk-in Closets",
+        tagline: "Expansive display and intuitive storage.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/bedroom_2.jpg",
+          "/images/collections/bedroom_4.jpg",
+          "/images/collections/collection-storage.jpg",
+          "/images/collections/bedroom_3.jpg",
+        ],
+      },
+      {
+        id: "storage-organizers",
+        title: "Storage & Organizers",
+        tagline: "Systematic luxury to tame the chaos.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/storage_decor_3.jpg",
+          "/images/collections/storage_decor_2.jpg",
+          "/images/collections/storage_decor_4.jpg",
+          "/images/collections/collection-storage.jpg",
+        ],
+      },
+      {
+        id: "kitchen-countertops",
+        title: "Countertops & Surfaces",
+        tagline: "Enduring materials that define the workspace.",
+        catalogueUrl: "#",
+        images: [
+          "/images/collections/kitchen-2.jpg",
+          "/images/collections/collection-faucets.jpg",
+          "/images/collections/kitchen-1.jpg",
+          "/images/about/about-sourcing.jpg",
+        ],
+      },
     ]
   },
 ];

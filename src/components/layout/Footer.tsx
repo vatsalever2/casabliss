@@ -8,9 +8,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/">
-            <img
+            <Image
               src="/images/logos/casabliss_logo_onlyCB-removebg.png"
               alt="Casa Bliss"
+              width={64}
+              height={64}
               className="w-auto h-16 object-contain"
             />
           </Link>
