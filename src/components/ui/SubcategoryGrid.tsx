@@ -94,16 +94,16 @@ function SubcategoryCarousel({ sub, aspectClass = "aspect-[3/2] md:aspect-[4/3]"
             disabled={activeIndex === 0}
             aria-label="Previous"
             className="
-              absolute left-0 top-1/2 -translate-y-1/2 z-20
-              h-12 w-12 md:h-14 md:w-14
+              absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-20
+              h-10 w-10 md:h-12 md:w-12 rounded-full
               inline-flex items-center justify-center
-              border border-white/10 border-l-0 bg-[#1A1A1A]/95 backdrop-blur-md text-gold
-              disabled:opacity-0 hover:bg-black hover:border-gold/50
-              transition-all duration-500
-              md:opacity-0 md:group-hover/carousel:opacity-100
+              border border-white/10 bg-black/90 backdrop-blur-md text-white shadow-2xl
+              disabled:opacity-0 hover:bg-black hover:border-gold/50 hover:text-gold hover:scale-105
+              transition-all duration-500 transform
+              md:opacity-0 md:scale-90 md:group-hover/carousel:opacity-100 md:group-hover/carousel:scale-100
             "
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6 stroke-[0.75] md:stroke-[1]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 stroke-[1]">
               <path d="M20 12H4M10 6l-6 6 6 6" strokeLinecap="square" strokeLinejoin="miter" />
             </svg>
           </button>
@@ -115,16 +115,16 @@ function SubcategoryCarousel({ sub, aspectClass = "aspect-[3/2] md:aspect-[4/3]"
             disabled={activeIndex === count - 1}
             aria-label="Next"
             className="
-              absolute right-0 top-1/2 -translate-y-1/2 z-20
-              h-12 w-12 md:h-14 md:w-14
+              absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-20
+              h-10 w-10 md:h-12 md:w-12 rounded-full
               inline-flex items-center justify-center
-              border border-white/10 border-r-0 bg-[#1A1A1A]/95 backdrop-blur-md text-gold
-              disabled:opacity-0 hover:bg-black hover:border-gold/50
-              transition-all duration-500
-              md:opacity-0 md:group-hover/carousel:opacity-100
+              border border-white/10 bg-black/90 backdrop-blur-md text-white shadow-2xl
+              disabled:opacity-0 hover:bg-black hover:border-gold/50 hover:text-gold hover:scale-105
+              transition-all duration-500 transform
+              md:opacity-0 md:scale-90 md:group-hover/carousel:opacity-100 md:group-hover/carousel:scale-100
             "
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6 stroke-[0.75] md:stroke-[1]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 stroke-[1]">
               <path d="M4 12h16M14 6l6 6-6 6" strokeLinecap="square" strokeLinejoin="miter" />
             </svg>
           </button>

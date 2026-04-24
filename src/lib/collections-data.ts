@@ -36,9 +36,9 @@ export const collections: Collection[] = [
     ],
     subcategories: [
       {
-        id: "living-room-sofas",
-        title: "Sofas & Seating",
-        tagline: "Architectural comfort designed for lingering.",
+        id: "living-room-seating-systems",
+        title: "Seating Systems",
+        tagline: "Modular forms and statement pieces for gathering.",
         catalogueUrl: "#",
         images: [
           "/images/collections/collection-furniture.jpg",
@@ -48,9 +48,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "living-room-coffee-tables",
-        title: "Coffee & Side Tables",
-        tagline: "Sculptural forms in stone, glass, and metal.",
+        id: "living-room-accent-seating",
+        title: "Accent Seating",
+        tagline: "Sculptural lounge chairs and tailored armchairs.",
         catalogueUrl: "#",
         images: [
           "/images/collections/storage_decor_3.jpg",
@@ -60,9 +60,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "living-room-tv-units",
-        title: "Media Architecture",
-        tagline: "Seamless integration of technology and design.",
+        id: "living-room-center-tables",
+        title: "Center Tables",
+        tagline: "Nested and sculptural anchors in stone and metal.",
         catalogueUrl: "#",
         images: [
           "/images/collections/storage_decor_2.jpg",
@@ -72,9 +72,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "living-room-decor",
-        title: "Accent & Decor",
-        tagline: "The final layer of curated sophistication.",
+        id: "living-room-media-storage",
+        title: "Media & Storage",
+        tagline: "Architectural wall systems and seamless consoles.",
         catalogueUrl: "#",
         images: [
           "/images/collections/storage_decor_4.jpg",
@@ -100,9 +100,9 @@ export const collections: Collection[] = [
     ],
     subcategories: [
       {
-        id: "bedroom-beds",
-        title: "Beds & Headboards",
-        tagline: "The sanctuary's centerpoint.",
+        id: "bedroom-bed-architecture",
+        title: "Bed Architecture",
+        tagline: "Upholstered and platform sanctuaries.",
         catalogueUrl: "#",
         images: [
           "/images/collections/collection-bedroom-v2.jpg",
@@ -112,9 +112,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "bedroom-wardrobes",
-        title: "Wardrobes & Storage",
-        tagline: "Concealed organization with tailored finishes.",
+        id: "bedroom-bedside-essentials",
+        title: "Bedside Essentials",
+        tagline: "Quiet companions of functional luxury.",
         catalogueUrl: "#",
         images: [
           "/images/collections/bedroom_2.jpg",
@@ -124,9 +124,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "bedroom-dressing",
-        title: "Dressing Tables",
-        tagline: "Intimate spaces for preparation and reflection.",
+        id: "bedroom-storage-systems",
+        title: "Storage Systems",
+        tagline: "Tailored chests, dressers, and concealed wardrobes.",
         catalogueUrl: "#",
         images: [
           "/images/collections/bedroom_3.jpg",
@@ -136,9 +136,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "bedroom-nightstands",
-        title: "Nightstands",
-        tagline: "Quiet companions of functional luxury.",
+        id: "bedroom-sanctuary-seating",
+        title: "Sanctuary Seating",
+        tagline: "Intimate benches, vanities, and lounge seating.",
         catalogueUrl: "#",
         images: [
           "/images/collections/bedroom_2.jpg",
@@ -166,7 +166,7 @@ export const collections: Collection[] = [
       {
         id: "dining-tables",
         title: "Dining Tables",
-        tagline: "Monolithic slabs forged for gathering.",
+        tagline: "Fixed and statement slabs forged for occasion.",
         catalogueUrl: "#",
         images: [
           "/images/collections/collection-dining.jpg",
@@ -176,8 +176,8 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "dining-chairs",
-        title: "Dining Chairs",
+        id: "dining-seating",
+        title: "Dining Seating",
         tagline: "Ergonomic support draped in fine materials.",
         catalogueUrl: "#",
         images: [
@@ -190,7 +190,7 @@ export const collections: Collection[] = [
       {
         id: "dining-sideboards",
         title: "Sideboards & Buffets",
-        tagline: "Architectural storage for fine diningware.",
+        tagline: "Architectural storage and elegant serving.",
         catalogueUrl: "#",
         images: [
           "/images/collections/storage_decor_3.jpg",
@@ -200,9 +200,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "dining-bar-units",
-        title: "Bar Units & Display",
-        tagline: "Elevated stages for curation and hosting.",
+        id: "dining-bar-hosting",
+        title: "Bar & Hosting",
+        tagline: "Elevated cabinets and trolleys for curation.",
         catalogueUrl: "#",
         images: [
           "/images/collections/collection-kitchen.jpg",
@@ -228,9 +228,9 @@ export const collections: Collection[] = [
     ],
     subcategories: [
       {
-        id: "modular-kitchens",
-        title: "Modular Kitchens",
-        tagline: "Precision-engineered culinary environments.",
+        id: "kitchen-systems",
+        title: "Kitchen Systems",
+        tagline: "Precision-engineered islands and full pantries.",
         catalogueUrl: "#",
         images: [
           "/images/collections/kitchen-1.jpg",
@@ -240,9 +240,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "wardrobe-systems",
-        title: "Walk-in Closets",
-        tagline: "Expansive display and intuitive storage.",
+        id: "kitchen-cabinetry",
+        title: "Cabinetry",
+        tagline: "Flawless base, wall, and tall unit integration.",
         catalogueUrl: "#",
         images: [
           "/images/collections/bedroom_2.jpg",
@@ -252,9 +252,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "storage-organizers",
-        title: "Storage & Organizers",
-        tagline: "Systematic luxury to tame the chaos.",
+        id: "smart-storage",
+        title: "Smart Storage",
+        tagline: "Systematic pull-outs and intuitive organizers.",
         catalogueUrl: "#",
         images: [
           "/images/collections/storage_decor_3.jpg",
@@ -264,9 +264,9 @@ export const collections: Collection[] = [
         ],
       },
       {
-        id: "kitchen-countertops",
-        title: "Countertops & Surfaces",
-        tagline: "Enduring materials that define the workspace.",
+        id: "wardrobe-architecture",
+        title: "Wardrobe Architecture",
+        tagline: "Expansive walk-ins and tailored sliding systems.",
         catalogueUrl: "#",
         images: [
           "/images/collections/kitchen-2.jpg",
