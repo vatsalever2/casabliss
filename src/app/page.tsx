@@ -108,7 +108,7 @@ export default function HomePage() {
               alt="Casa Bliss"
               width={800}
               height={200}
-              className="w-[240px] sm:w-[320px] md:w-[460px] lg:w-[560px] h-auto object-contain brightness-0 invert"
+              className="w-[240px] sm:w-[320px] md:w-[460px] lg:w-[560px] h-auto object-contain"
               priority
             />
           </motion.div>

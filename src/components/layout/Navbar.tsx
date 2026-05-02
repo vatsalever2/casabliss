@@ -40,20 +40,18 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? "bg-deep-ink/80 backdrop-blur-md"
             : "bg-transparent"
-        }`}
+          }`}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
           {/* Logo */}
-          <Link href="/" className={`relative z-10 transition-opacity duration-[1500ms] ease-in-out ${
-            isHomePage && !scrolled ? "opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto" : "opacity-100"
-          }`}>
+          <Link href="/" className={`relative z-10 transition-opacity duration-[1500ms] ease-in-out ${isHomePage && !scrolled ? "opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto" : "opacity-100"
+            }`}>
             <motion.div
               animate={{ height: scrolled ? 40 : 56 }}
               transition={{ duration: 0.3 }}
