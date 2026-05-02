@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cormorant, dmSans } from "@/lib/fonts";
+import { inter } from "@/lib/fonts";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
@@ -63,7 +63,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${cormorant.variable} ${dmSans.variable} antialiased`}
+      className={`${inter.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="flex flex-col relative w-full overflow-x-clip min-h-screen" suppressHydrationWarning>

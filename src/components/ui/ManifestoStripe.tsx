@@ -21,7 +21,7 @@ export default function ManifestoStripe() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-          className="text-cream/90 text-xl md:text-2xl lg:text-3xl font-light tracking-wide leading-relaxed"
+          className="text-cream/90 text-xl md:text-2xl lg:text-3xl font-serif font-light tracking-wide leading-relaxed"
         >
           Curating the finest craftsmanship from Italy and China to elevate your extraordinary home.
         </motion.p>

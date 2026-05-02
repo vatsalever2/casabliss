@@ -75,6 +75,7 @@ export default function HomePage() {
                 alt="Luxury interior showroom"
                 fill
                 priority
+                loading="eager"
                 className="object-cover opacity-60 md:opacity-75"
                 sizes="100vw"
               />
@@ -104,7 +105,7 @@ export default function HomePage() {
           >
             <h1 className="sr-only">Casa Bliss</h1>
             <PremiumImage
-              src="/images/logos/casabliss_name-removebg.png"
+              src="/images/logos/casabliss_logo_nobg.png"
               alt="Casa Bliss"
               width={800}
               height={200}
@@ -166,7 +167,7 @@ export default function HomePage() {
                 The Philosophy
               </span>
               <h2 className="text-display text-4xl lg:text-5xl xl:text-6xl text-off-white leading-tight mb-8">
-                We source only what we would place in our <i className="italic font-light pr-1 text-gold/90">own</i> home.
+                We source only what we would place in our <i className="italic font-light pr-1 text-gold/60">own</i> home.
               </h2>
             </SectionReveal>
 
@@ -328,7 +329,7 @@ export default function HomePage() {
             <SectionReveal>
               <h2 className="text-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-off-white leading-[1.1] mb-6">
                 Your vision. <br />
-                <span className="italic font-light text-gold/80">Our connections.</span>
+                <span className="italic font-light text-gold/60">Our connections.</span>
               </h2>
             </SectionReveal>
             <SectionReveal delay={0.15}>
