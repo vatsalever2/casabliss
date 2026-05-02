@@ -104,7 +104,7 @@ export default function HomePage() {
           >
             <h1 className="sr-only">Casa Bliss</h1>
             <PremiumImage
-              src="/images/logos/casabliss_name-removebg.png"
+              src="/images/logos/casabliss_logo_nobg.png"
               alt="Casa Bliss"
               width={800}
               height={200}
