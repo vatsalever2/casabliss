@@ -50,7 +50,7 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
           {/* Logo */}
-          <Link href="/" className={`relative z-10 transition-opacity duration-[1500ms] ease-in-out ${isHomePage && !scrolled ? "opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto" : "opacity-100"
+          <Link href="/" className={`relative z-10 transition-opacity duration-[1500ms] ease-in-out ${isHomePage && !scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}>
             <motion.div
               animate={{ height: scrolled ? 40 : 56 }}
