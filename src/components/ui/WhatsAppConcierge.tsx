@@ -5,7 +5,7 @@ import Magnetic from "@/components/ui/Magnetic";
 
 export default function WhatsAppConcierge() {
   // Replace with the actual WhatsApp number including country code, e.g., "1234567890" for +1 (234) 567-890
-  const whatsappNumber = "1234567890"; 
+  const whatsappNumber = "917386680089"; 
   const whatsappMessage = "Hello Casa Bliss, I would like to inquire about your collections.";
 
   return (
