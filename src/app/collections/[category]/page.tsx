@@ -99,54 +99,6 @@ export default async function CategoryPage({ params }: PageProps) {
         
       </section>
 
-      {/* Act II: The Philosophy Editorial */}
-      <section className="py-24 md:py-48 w-full px-6 md:px-12 lg:px-24 bg-soft-black relative overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-full max-w-2xl bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-32 relative z-10">
-          
-          {/* Left: Section Header & Accent */}
-          <div className="w-full lg:w-1/4 flex flex-col border-t border-gold/20 pt-8">
-            <SectionReveal>
-               <div className="flex justify-between items-start">
-                 <span className="text-gold uppercase tracking-[0.4em] text-[10px] md:text-xs font-sans">
-                   02
-                 </span>
-                 <span className="text-white/30 uppercase tracking-[0.2em] text-[10px] font-sans hidden sm:block">
-                   Manifesto
-                 </span>
-               </div>
-               <h2 className="text-lg md:text-xl text-off-white mt-8 tracking-wider font-light uppercase">
-                 Our Philosophy
-               </h2>
-               
-               {/* Decorative Abstract Element */}
-               <div className="mt-16 w-16 h-16 rounded-full border border-gold/10 flex items-center justify-center relative hidden md:flex">
-                  <div className="absolute w-full h-px bg-gold/10" />
-                  <div className="absolute h-full w-px bg-gold/10" />
-                  <div className="w-2 h-2 bg-gold/40 rounded-full z-10" />
-               </div>
-            </SectionReveal>
-          </div>
-
-          {/* Right: The Manifesto */}
-          <div className="w-full lg:w-3/4 flex flex-col justify-center border-t border-white/5 pt-8">
-            <SectionReveal delay={0.2}>
-               {/* Editorial Drop Cap implementation */}
-               <p className="text-display font-light text-3xl md:text-4xl lg:text-5xl text-off-white/90 leading-[1.4] md:leading-[1.3] tracking-wide text-pretty
-                  first-letter:text-7xl first-letter:md:text-[7rem] first-letter:lg:text-[8rem] first-letter:font-normal first-letter:text-gold first-letter:float-left first-letter:mr-6 lg:first-letter:mr-8 first-letter:mt-1 lg:first-letter:mt-2 first-letter:leading-none">
-                 {collection.philosophy}
-               </p>
-
-               <div className="mt-16 md:mt-24 flex items-center gap-6">
-                 <div className="h-px max-w-[200px] flex-1 bg-gradient-to-r from-gold/30 to-transparent" />
-                 <span className="text-[10px] md:text-xs font-sans uppercase tracking-[0.3em] text-gold/40">Casa Bliss Architecture</span>
-               </div>
-            </SectionReveal>
-          </div>
-        </div>
-      </section>
 
       {/* Act III: Subcategories Showcase */}
       <SubcategoryGrid 
