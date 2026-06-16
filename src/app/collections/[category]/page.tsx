@@ -103,6 +103,7 @@ export default async function CategoryPage({ params }: PageProps) {
       {/* Act III: Subcategories Showcase */}
       <SubcategoryGrid 
         collectionTitle={collection.title} 
+        catalogueUrl={collection.catalogueUrl}
         subcategories={collection.subcategories} 
       />
 

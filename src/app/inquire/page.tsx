@@ -5,6 +5,7 @@ import CurtainReveal from "@/components/ui/CurtainReveal";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import InquiryForm from "@/components/ui/InquiryForm";
 import Magnetic from "@/components/ui/Magnetic";
+import DynamicWhatsAppLink from "@/components/ui/DynamicWhatsAppLink";
 
 export const metadata: Metadata = {
   title: "Inquire",
@@ -68,16 +69,12 @@ export default function InquirePage() {
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 pl-[52px]">
               <div>
                 <p className="text-cream/25 text-xs uppercase tracking-widest font-sans mb-2">WhatsApp</p>
-                <Magnetic strength={5}>
-                  <a
-                    href="https://wa.me/917386680089?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Casa%20Bliss."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="gold-link text-cream/60 text-sm tracking-widest uppercase hover:text-off-white transition-colors duration-300"
-                  >
-                    Send a message
-                  </a>
-                </Magnetic>
+                <DynamicWhatsAppLink
+                  defaultMessage="Hello, I'd like to know more about Casa Bliss."
+                  className="gold-link text-cream/60 text-sm tracking-widest uppercase hover:text-off-white transition-colors duration-300"
+                >
+                  Send a message
+                </DynamicWhatsAppLink>
               </div>
 
               <div>

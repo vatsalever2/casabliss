@@ -2,11 +2,31 @@
 
 import { motion } from "framer-motion";
 import Magnetic from "@/components/ui/Magnetic";
+import { useEffect, useState } from "react";
 
 export default function WhatsAppConcierge() {
-  // Replace with the actual WhatsApp number including country code, e.g., "1234567890" for +1 (234) 567-890
-  const whatsappNumber = "917386680089"; 
+  const [whatsappNumber, setWhatsappNumber] = useState("917386680089"); // Default to India
   const whatsappMessage = "Hello Casa Bliss, I would like to inquire about your collections.";
+
+  useEffect(() => {
+    // Detect if client is in Australia via GeoJS API
+    fetch("https://get.geojs.io/v1/ip/country.json")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.country === "AU") {
+          // Replace with the actual Australian WhatsApp number including country code
+          setWhatsappNumber("61000000000"); 
+        }
+      })
+      .catch((err) => {
+        console.error("Location detection failed", err);
+        // Fallback: Check if timezone indicates Australia
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        if (timeZone && timeZone.startsWith("Australia/")) {
+          setWhatsappNumber("61000000000"); 
+        }
+      });
+  }, []);
 
   return (
     <motion.div 

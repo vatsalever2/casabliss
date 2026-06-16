@@ -155,10 +155,11 @@ function SubcategoryCarousel({ sub, aspectClass = "aspect-[3/2] md:aspect-[4/3]"
 /* ─── Main section ───────────────────────────────────────────── */
 interface SubcategoryGridProps {
   collectionTitle: string;
+  catalogueUrl?: string;
   subcategories?: Subcategory[];
 }
 
-export default function SubcategoryGrid({ collectionTitle, subcategories }: SubcategoryGridProps) {
+export default function SubcategoryGrid({ collectionTitle, catalogueUrl, subcategories }: SubcategoryGridProps) {
   if (!subcategories || subcategories.length === 0) return null;
 
   return (
@@ -216,17 +217,6 @@ export default function SubcategoryGrid({ collectionTitle, subcategories }: Subc
                   <p className="text-cream/50 text-sm leading-relaxed tracking-wide mb-8 max-w-[88%]">
                     {sub.tagline}
                   </p>
-                  
-                  {/* Flawless UX Button: Always Full Width, High Visibility */}
-                  <a 
-                    href={sub.catalogueUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-full flex justify-center items-center gap-3 bg-gold/10 border border-gold/40 hover:bg-gold hover:text-deep-ink py-4 text-[11px] uppercase tracking-[0.25em] font-sans text-gold transition-colors duration-300"
-                  >
-                    <span>View Catalogue</span>
-                    <span className="text-sm">→</span>
-                  </a>
                 </div>
 
               </div>
@@ -259,30 +249,9 @@ export default function SubcategoryGrid({ collectionTitle, subcategories }: Subc
                 <h3 className="text-display font-light text-2xl md:text-[1.75rem] text-off-white mb-3 leading-tight tracking-tight">
                   {sub.title}
                 </h3>
-                <p className="text-cream/45 font-light text-sm leading-relaxed tracking-wide mb-8 flex-1">
+                <p className="text-cream/45 font-light text-sm leading-relaxed tracking-wide flex-1">
                   {sub.tagline}
                 </p>
-
-                <div className="self-start mt-auto">
-                  <Magnetic strength={10}>
-                    <a
-                      href={sub.catalogueUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        group/btn inline-flex items-center gap-3
-                        border border-gold/30 bg-gold/5
-                        px-7 py-3 md:px-8 md:py-3.5
-                        text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-sans text-off-white
-                        hover:bg-gold hover:text-deep-ink hover:border-gold
-                        transition-all duration-500
-                      "
-                    >
-                      <span>View Catalogue</span>
-                      <span className="group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-                    </a>
-                  </Magnetic>
-                </div>
               </div>
 
               {/* Corner accent */}
@@ -294,6 +263,33 @@ export default function SubcategoryGrid({ collectionTitle, subcategories }: Subc
           </SectionReveal>
         ))}
       </div>
+
+      {/* ── Collection Catalogue CTA ── */}
+      {catalogueUrl && catalogueUrl !== "#" && (
+        <div className="w-full flex justify-center mt-16 md:mt-24 px-6 z-20 relative">
+          <SectionReveal>
+            <Magnetic strength={15}>
+              <a
+                href={catalogueUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group flex items-center justify-center gap-4
+                  border border-gold/40 bg-gold/5 backdrop-blur-sm
+                  px-8 py-4 md:px-12 md:py-5
+                  text-xs md:text-sm uppercase tracking-[0.3em] font-sans text-gold
+                  hover:bg-gold hover:text-deep-ink hover:border-gold shadow-xl
+                  transition-all duration-500
+                "
+              >
+                <span>View Full {collectionTitle} Catalogue</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </a>
+            </Magnetic>
+          </SectionReveal>
+        </div>
+      )}
+      
     </section>
   );
 }
