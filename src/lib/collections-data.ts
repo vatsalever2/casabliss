@@ -18,7 +18,7 @@ export interface Collection {
 }
 
 // Master catalogue link (all categories combined)
-export const masterCatalogueUrl = "https://drive.google.com/drive/folders/18dWD9VlXbK52UodsqCA0zHCJttLcF0JP?usp=sharing";
+export const masterCatalogueUrl = "https://drive.google.com/drive/folders/19T14ZOoQeEkK6VsDpuI7kVA3xJv3soY9";
 
 export const collections: Collection[] = [
   {
@@ -26,7 +26,7 @@ export const collections: Collection[] = [
     title: "Living Room",
     tagline: "Pieces that speak before you enter the room.",
     image: "/images/collections/collection-furniture.jpg",
-    catalogueUrl: "https://drive.google.com/drive/folders/1ySMwKSi3UP_dzCKqBFbAHT71HM66V20Y?usp=sharing",
+    catalogueUrl: "https://drive.google.com/drive/folders/19T14ZOoQeEkK6VsDpuI7kVA3xJv3soY9",
     philosophy: "The living room is the architectural heart of the home. We curate expansive Italian leather seating and monolithic stone that command the space with quiet authority.",
     gallery: [
       "/images/collections/collection-furniture.jpg",
@@ -90,7 +90,7 @@ export const collections: Collection[] = [
     title: "Bedroom",
     tagline: "Where the day ends and quality begins.",
     image: "/images/collections/collection-bedroom-v2.jpg",
-    catalogueUrl: "https://drive.google.com/drive/folders/1zDDLiUBAolJAQZNtvvia7U0B8eRf8B7O?usp=sharing",
+    catalogueUrl: "https://drive.google.com/drive/folders/19T14ZOoQeEkK6VsDpuI7kVA3xJv3soY9",
     philosophy: "The bedroom demands absolute silence. We architect master suites around European tailoring and textiles that transform the room into a sanctuary of restorative luxury.",
     gallery: [
       "/images/collections/collection-bedroom-v2.jpg",
@@ -154,7 +154,7 @@ export const collections: Collection[] = [
     title: "Dining",
     tagline: "Tables that turn a meal into an occasion.",
     image: "/images/collections/collection-dining.jpg",
-    catalogueUrl: "https://drive.google.com/drive/folders/1WjzesQninP6P_WrERp1WWHsdSbgqBj8s?usp=sharing",
+    catalogueUrl: "https://drive.google.com/drive/folders/19T14ZOoQeEkK6VsDpuI7kVA3xJv3soY9",
     philosophy: "Dining is an occasion of communion. We source sculptural slabs of sintered stone that serve as monumental centerpieces built to last for generations.",
     gallery: [
       "/images/process/service-3.jpg",
@@ -218,7 +218,7 @@ export const collections: Collection[] = [
     title: "Modular Kitchen & Wardrobes",
     tagline: "Precision-crafted spaces for how you live.",
     image: "/images/collections/kitchen-1.jpg",
-    catalogueUrl: "https://drive.google.com/drive/folders/127eg_cZC4rPdycrDsIor_qBpBeVbu9QZ?usp=sharing",
+    catalogueUrl: "https://drive.google.com/drive/folders/19T14ZOoQeEkK6VsDpuI7kVA3xJv3soY9",
     philosophy: "A kitchen and wardrobe are not mere storage — they are the operational core of a refined home. We engineer modular systems with German-grade precision, marrying aesthetic coherence with flawless functionality.",
     gallery: [
       "/images/collections/kitchen-1.jpg",

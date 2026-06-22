@@ -9,8 +9,8 @@ export default function WhatsAppConcierge() {
   const whatsappMessage = "Hello Casa Bliss, I would like to inquire about your collections.";
 
   useEffect(() => {
-    // Detect if client is in Australia via GeoJS API
-    fetch("https://get.geojs.io/v1/ip/country.json")
+    // Detect if client is in Australia
+    fetch("https://api.country.is")
       .then((res) => res.json())
       .then((data) => {
         if (data.country === "AU") {
@@ -18,9 +18,8 @@ export default function WhatsAppConcierge() {
           setWhatsappNumber("61000000000"); 
         }
       })
-      .catch((err) => {
-        console.error("Location detection failed", err);
-        // Fallback: Check if timezone indicates Australia
+      .catch(() => {
+        // Fallback: Check if timezone indicates Australia silently
         const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         if (timeZone && timeZone.startsWith("Australia/")) {
           setWhatsappNumber("61000000000"); 
